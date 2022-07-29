@@ -1,16 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
-import { fetchAPI } from "../lib/api";
+import { fetchAPI, getHomeData } from "../lib/api";
 import Layout from "../components/Layout/Layout";
 import styles from "../styles/Home.module.css";
 
 export async function getStaticProps() {
   const [homeData, globalData] = await Promise.all([
-    fetchAPI("/home?populate=deep"),
+    getHomeData(),
     fetchAPI("/global?populate=deep"),
   ]);
   return {
-    props: { homeData: homeData.data.attributes, globalData },
+    props: { homeData: homeData, globalData },
     revalidate: 1,
   };
 }
@@ -28,6 +28,8 @@ export default function Home({ homeData }) {
       <Layout>
         <main className={styles.main}>
           <div>{homeData.testText}</div>
+          <Image src={homeData.testPhoto.data.attributes.url} width="400px" height="400px" objectFit="cover" />
+          <div dangerouslySetInnerHTML={{ __html: homeData.testRichText }}></div>
         </main>
 
         <footer className={styles.footer}>
