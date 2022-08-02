@@ -27,13 +27,13 @@ const About = ({ globalData, boardData }) => (
           promoting the organ, organ and choral music, as well as providing
           mutual support for organists and choral directors and nurturing future
           organists. Chartered on March 6, 1922 after being established as a
-          "sub-chapter" in 1917, it is part of an international professional
-          association serving over 19,000 members throughout the United States,
-          Europe, Singapore, Korea, Taiwan and Sydney, Australia. The chapter
-          hosted regional conventions in 1969, 2001, and 2015 and Pipe Organ
-          Encounters in 1997, 2003, 2006, 2009, 2012, and 2017. We are proud of
-          the large number of young organ students who are being trained to
-          become future organists by several of our chapter members.
+          &quot;sub-chapter&quot; in 1917, it is part of an international
+          professional association serving over 19,000 members throughout the
+          United States, Europe, Singapore, Korea, Taiwan and Sydney, Australia.
+          The chapter hosted regional conventions in 1969, 2001, and 2015 and
+          Pipe Organ Encounters in 1997, 2003, 2006, 2009, 2012, and 2017. We
+          are proud of the large number of young organ students who are being
+          trained to become future organists by several of our chapter members.
         </p>
       </section>
       <section className={classes.About__Values}>
@@ -47,11 +47,12 @@ const About = ({ globalData, boardData }) => (
       </section>
       <section>
         <h2>Our Board</h2>
-        {boardData.map(member => (
-          <div>
+        {boardData.map((member) => (
+          <div key={member.id}>
             <div>{member.Position}</div>
             <div>
-              {member.Prefix ? member.Prefix : null} {member.firstName} {member.lastName}
+              {member.Prefix ? member.Prefix : null} {member.firstName}{" "}
+              {member.lastName}
             </div>
             <div>{member.email}</div>
             <br />
