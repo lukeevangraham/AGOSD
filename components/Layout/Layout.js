@@ -1,10 +1,11 @@
 import Toolbar from "../Navigation/Toolbar/Toolbar";
 
-const Layout = ({ children }) => (
+const Layout = ({ children, globalData }) => (
   <>
-    <Toolbar />
-    <div>Layout</div>
-    {children}
+    <Toolbar globalData={globalData} />
+    <main>
+      {children}
+    </main>
   </>
 );
 

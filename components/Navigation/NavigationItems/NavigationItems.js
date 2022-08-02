@@ -1,10 +1,14 @@
-import NavigationItem from "./NavigationItem/NavigationItem"
+import NavigationItem from "./NavigationItem/NavigationItem";
 
-const NavigationItems = () => (
-    <>
-        <div>Navigation Items</div>
-        <NavigationItem />
-    </>
-)
+import classes from "./NavigationItems.module.scss"
+
+const NavigationItems = ({ links }) => (
+  <div className={classes.NavigationItems}>
+    <NavigationItem />
+    {links.map((link) => (
+      <NavigationItem link={link} key={link.id} />
+    ))}
+  </div>
+);
 
 export default NavigationItems;

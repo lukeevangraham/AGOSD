@@ -1,9 +1,8 @@
 import NavigationItems from "../NavigationItems/NavigationItems";
 
-const Toolbar = () => (
+const Toolbar = ({ globalData }) => (
   <>
-    <NavigationItems />
-    <div>Toolbar!</div>
+    <NavigationItems links={globalData.Navbar.links} />
   </>
 );
 
