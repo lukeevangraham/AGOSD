@@ -1,0 +1,33 @@
+@import "../../styles/abstracts/variables";
+
+.Events {
+  &__Controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    & :first-child {
+      margin-right: 1rem;
+      font-weight: 700;
+    }
+
+    &_button {
+      background-color: $color-secondary-light;
+      padding: .5rem 1rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__Group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    & > * {
+      flex-basis: 30%;
+    }
+  }
+}
