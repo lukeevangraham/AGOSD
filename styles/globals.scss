@@ -1,0 +1,60 @@
+@import "abstracts/mixins";
+@import "abstracts/variables.scss";
+@import "base/typography";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* This defines what 1rem is */
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12, 12/16
+  }
+}
+
+body {
+  box-sizing: border-box;
+  color: $color-grey-dark;
+  background-color: $color-grey-light;
+  //   padding: 3rem;
+  font-size: 1.6rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+a {
+  color: $color-primary;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+.row {
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  @include respond(tab-land) {
+    padding: 0 3rem;
+  }
+}
