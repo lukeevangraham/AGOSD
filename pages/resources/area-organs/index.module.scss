@@ -1,0 +1,11 @@
+.AreaOrgans {
+  &__Organs {
+    // background-color: yellowgreen;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 4rem 2rem;
+    grid-auto-rows: 60rem;
+  }
+}

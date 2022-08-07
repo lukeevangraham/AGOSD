@@ -1,0 +1,23 @@
+@import "../../../styles/abstracts/variables";
+
+.OrganCard {
+  // background-color: orangered;
+  //   height: 20rem;
+  height: 100%;
+  box-shadow: 0 0 2rem $color-grey;
+  // text-align: center;
+
+  &__Image {
+    position: relative;
+    height: 50rem;
+  }
+
+  &__Name {
+    background-color: $color-white;
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    height: 10rem;
+  }
+}

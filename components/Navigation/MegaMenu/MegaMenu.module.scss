@@ -1,0 +1,9 @@
+@import "../../../styles/abstracts/variables";
+
+.MegaMenu {
+  background-color: $color-secondary-light;
+  padding: 2rem 3rem;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}

@@ -9,10 +9,10 @@ export async function getStaticProps() {
   };
 }
 
-const Resources = ({ globalData }) => (
+const SubstituteOrganists = ({ globalData }) => (
   <Layout globalData={globalData}>
-    <div>Resources</div>
+    <div>Substitute Organists</div>
   </Layout>
 );
 
-export default Resources;
+export default SubstituteOrganists;

@@ -1,0 +1,10 @@
+@import "../../styles/abstracts/variables";
+.Links {
+  &__Link {
+    // background-color: orangered;
+    a {
+      color: $color-primary-darker;
+    }
+    margin-top: 1rem;
+  }
+}
