@@ -1,17 +1,30 @@
 @import "../../../styles/abstracts/variables";
 
 .NavigationItems {
-    // background-color: orangered;
-    display: flex;
-    justify-content: space-evenly;
+  // background-color: orangered;
+  display: flex;
+  justify-content: space-evenly;
 
-    &__Resources {
-        color: $color-primary;
-        cursor: pointer;
+  a {
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary-dark;
     }
+  }
+
+  &__Resources {
+    color: $color-primary;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
 }
 
 .Resources {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }

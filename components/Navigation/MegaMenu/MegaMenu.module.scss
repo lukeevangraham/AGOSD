@@ -6,4 +6,13 @@
   position: absolute;
   width: 100%;
   z-index: 1;
+
+  a {
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
 }

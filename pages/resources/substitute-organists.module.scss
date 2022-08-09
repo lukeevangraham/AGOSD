@@ -1,0 +1,29 @@
+@import "../../styles/abstracts/variables";
+
+.Organists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+
+  &__Organist {
+    background-color: $color-white;
+    padding: 1rem;
+    list-style-position: inside;
+
+    a {
+      color: $color-primary-darker;
+
+      &:hover {
+        color: $color-black;
+      }
+    }
+
+    &_name {
+        font-size: 2rem;
+    }
+
+    &_availability {
+        margin-top: 1rem;
+    }
+  }
+}

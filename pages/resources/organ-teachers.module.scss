@@ -1,0 +1,17 @@
+@import "../../styles/abstracts/variables";
+
+.Teachers {
+  // background-color: orangered;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+
+  &__Teacher {
+    background-color: $color-white;
+    padding: 1.5rem;
+
+    &_name {
+      font-size: 2rem;
+    }
+  }
+}
