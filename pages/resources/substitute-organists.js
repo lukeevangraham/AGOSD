@@ -23,7 +23,7 @@ const SubstituteOrganists = ({ globalData, subOrganistsData }) => (
       <div>
         <p>
           <strong>
-            Those whose information states "only Weddings/Funerals" are not
+            Those whose information states &quot;only Weddings/Funerals&quot; are not
             available on Sundays
           </strong>
         </p>
