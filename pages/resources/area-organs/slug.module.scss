@@ -1,0 +1,25 @@
+@import "../../../styles/abstracts/variables";
+
+.Organ {
+  a {
+    color: $color-primary-darker;
+  }
+
+  &__InstrumentDetail {
+    // background-color: orangered;
+    margin-top: 2rem;
+
+    &_topImage {
+      position: relative;
+      height: 30rem;
+    }
+
+    &_image {
+      position: relative;
+      // height: 20rem;
+      height: 30rem;
+      width: 100%;
+      margin: 2rem 0;
+    }
+  }
+}
