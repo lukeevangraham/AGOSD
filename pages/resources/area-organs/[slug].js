@@ -57,6 +57,7 @@ const Organ = ({ globalData, organData }) => (
             <a
               href={organ.attributes.Specs.data.attributes.url}
               target="_blank"
+              rel="noreferrer"
             >
               Organ Specs
             </a>

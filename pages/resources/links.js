@@ -3,7 +3,7 @@ import Layout from "../../components/Layout/Layout";
 import { getGlobalData } from "../../lib/api";
 import { getLinkData } from "../../lib/resources";
 
-import classes from "./links.module.scss"
+import classes from "./links.module.scss";
 
 export async function getStaticProps() {
   const [globalData, linkData] = await Promise.all([
@@ -23,7 +23,9 @@ const Links = ({ globalData, linkData }) => (
         <div>Links</div>
         {linkData.map((link) => (
           <div className={classes.Links__Link} key={link.id}>
-            <a target="_blank" href={link.url}>{link.text}</a>
+            <a target="_blank" href={link.url} rel="noreferrer">
+              {link.text}
+            </a>
             <div dangerouslySetInnerHTML={{ __html: link.Description }}></div>
           </div>
         ))}
