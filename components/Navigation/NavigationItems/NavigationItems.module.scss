@@ -14,7 +14,7 @@
     }
   }
 
-  &__Resources {
+  &__MegaMenu {
     color: $color-primary;
     cursor: pointer;
 
@@ -24,7 +24,7 @@
   }
 }
 
-.Resources {
+.MegaMenu {
   display: flex;
   justify-content: space-evenly;
 }
