@@ -15,7 +15,7 @@ const NavigationItems = ({ links, setMegaMenuContent, megaMenuContent }) => {
       <Link href={"/resources/organ-teachers"}>
         <a>Organ Teachers</a>
       </Link>
-      <Link href={"substitute-organists"}>
+      <Link href={"/resources/substitute-organists"}>
         <a>Substitute Organists</a>
       </Link>
     </div>
