@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Script from "next/script";
 import Layout from "../../components/Layout/Layout";
 import { getGlobalData } from "../../lib/api";
 import DonateButton from "../../components/Resources/DonateButton/DonateButton";
@@ -38,10 +39,10 @@ const Donate = ({ globalData }) => {
         <div className={`${classes.Secondary__light} ${classes.Box}`}></div>
         <div className={`${classes.Secondary__lighter} ${classes.Box}`}></div>
       </div>
-      <script
+      <Script
         src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"
-        charset="UTF-8"
-      ></script>
+        charSet="UTF-8"
+      ></Script>
     </Layout>
   );
 };
