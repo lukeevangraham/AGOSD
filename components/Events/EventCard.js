@@ -20,7 +20,10 @@ const EventCard = ({ event }) => (
       <div>{event.attributes.Type}</div>
       <div>{event.attributes.Location}</div>
       <div>
-        {new Date(event.attributes.dateAndTime).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })}
+        {new Date(event.attributes.dateAndTime).toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "2-digit",
+        })}
       </div>
     </div>
   </div>
