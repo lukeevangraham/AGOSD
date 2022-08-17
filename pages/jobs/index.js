@@ -20,7 +20,7 @@ export async function getStaticProps() {
 const Jobs = ({ globalData, jobsData, placementData }) => (
   <Layout globalData={globalData}>
     <div className="row">
-      <div>Jobs</div>
+      <h1>Jobs</h1>
       <div>
         <div>Advertising Rates</div>
         <div>$35 per listing for up to six months.</div>

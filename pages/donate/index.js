@@ -18,7 +18,7 @@ const Donate = ({ globalData }) => {
   return (
     <Layout globalData={globalData}>
       <div className="row">
-        <div>Donate</div>
+        <h1>Donate</h1>
         <DonateButton />
 
         {/* <div className={`${classes.Black} ${classes.Box}`}></div> */}

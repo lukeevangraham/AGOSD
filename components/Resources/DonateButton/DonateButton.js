@@ -20,7 +20,7 @@ const DonateButton = () => {
       },
     });
     button.render(`#${buttonRef.current.id}`); // you can change the code and run it when DOM is ready
-  }, []);
+  }, [buttonRef]);
   return <div ref={buttonRef} id={buttonId} />;
 };
 

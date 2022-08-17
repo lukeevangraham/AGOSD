@@ -1,43 +1,52 @@
+import Image from "next/image"
 import Layout from "../../components/Layout/Layout";
 import { getGlobalData } from "../../lib/api";
-import { getBoardData } from "../../lib/about";
+import { getBoardData, getAboutData } from "../../lib/about";
 
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
-  const [globalData, boardData] = await Promise.all([
+  const [globalData, boardData, aboutData] = await Promise.all([
     getGlobalData(),
     getBoardData(),
+    getAboutData(),
   ]);
   return {
-    props: { globalData, boardData },
+    props: { globalData, boardData, aboutData },
     revalidate: 1,
   };
 }
 
-const About = ({ globalData, boardData }) => (
+const About = ({ globalData, boardData, aboutData }) => (
   <Layout globalData={globalData}>
     <div className={classes.About}>
       <div className="row">
-        <h1>About Our Chapter</h1>
-        <section>
-          <h2>Supporting organists, choir directeors and future organists</h2>
-          <p>
-            The San Diego Chapter of the American Guild of Organists takes great
-            pride in its history and seeks innovative ideas to be a leader in
-            promoting the organ, organ and choral music, as well as providing
-            mutual support for organists and choral directors and nurturing
-            future organists. Chartered on March 6, 1922 after being established
-            as a &quot;sub-chapter&quot; in 1917, it is part of an international
-            professional association serving over 19,000 members throughout the
-            United States, Europe, Singapore, Korea, Taiwan and Sydney,
-            Australia. The chapter hosted regional conventions in 1969, 2001,
-            and 2015 and Pipe Organ Encounters in 1997, 2003, 2006, 2009, 2012,
-            and 2017. We are proud of the large number of young organ students
-            who are being trained to become future organists by several of our
-            chapter members.
-          </p>
-        </section>
+        <h1 className="heading-primary">About Our Chapter</h1>
+        <div className={classes.About__TopInfo}>
+          <div>
+            {console.log("AD: ", aboutData)}
+            <h2 className="heading-secondary">
+              Supporting organists, choir directors and future organists
+            </h2>
+            <p>
+              The San Diego Chapter of the American Guild of Organists takes
+              great pride in its history and seeks innovative ideas to be a
+              leader in promoting the organ, organ and choral music, as well as
+              providing mutual support for organists and choral directors and
+              nurturing future organists. Chartered on March 6, 1922 after being
+              established as a &quot;sub-chapter&quot; in 1917, it is part of an
+              international professional association serving over 19,000 members
+              throughout the United States, Europe, Singapore, Korea, Taiwan and
+              Sydney, Australia. The chapter hosted regional conventions in
+              1969, 2001, and 2015 and Pipe Organ Encounters in 1997, 2003,
+              2006, 2009, 2012, and 2017. We are proud of the large number of
+              young organ students who are being trained to become future
+              organists by several of our chapter members.
+            </p>
+          </div>
+          <div className={classes.About__TopInfo_Image}><Image src={aboutData.topImage.data.attributes.url} objectFit="cover" layout="fill" /></div>
+        </div>
+
         <section className={classes.About__Values}>
           <h2>Our Values</h2>
           <div className={classes.About__Values__Group}>
