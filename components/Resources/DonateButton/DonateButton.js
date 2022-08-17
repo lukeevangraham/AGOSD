@@ -10,7 +10,7 @@ const DonateButton = () => {
   const buttonRef = useRef(null);
   const buttonId = useMemo(() => `ID-${generateId()}`, []);
   useEffect(() => {
-    if (window.PayPal.Donation) {
+    if (window.PayPal) {
       const button = window.PayPal.Donation.Button({
         env: "production",
         hosted_button_id: "RM9W3A5974QJG",
