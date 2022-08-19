@@ -20,7 +20,7 @@ const Links = ({ globalData, linkData }) => (
   <Layout globalData={globalData}>
     <div className={classes.Links}>
       <div className="row">
-        <div>Links</div>
+        <h1>Links</h1>
         {linkData.map((link) => (
           <div className={classes.Links__Link} key={link.id}>
             <a target="_blank" href={link.url} rel="noreferrer">

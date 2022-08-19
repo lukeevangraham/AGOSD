@@ -1,13 +1,29 @@
+@import "../../styles/abstracts/variables";
+
 .About {
+  &__TopInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 3rem;
+
+    &_Image {
+      position: relative;
+      // background-color: orangered;
+      aspect-ratio: 8 / 5;
+      border-radius: 5px;
+      overflow: hidden;
+      align-self: center;
+      box-shadow: 0 0 1.3rem $color-grey-dark;
+    }
+  }
   &__Values {
     &__Group {
       display: flex;
-      background-color: orangered;
+      // background-color: orangered;
       justify-content: space-around;
     }
   }
 
   &__Board {
-    
   }
 }

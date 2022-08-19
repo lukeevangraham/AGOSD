@@ -18,12 +18,14 @@ export async function getStaticProps() {
 
 const AreaOrgans = ({ globalData, organsData }) => (
   <Layout globalData={globalData}>
-    <div>Area Organs</div>
-    <div className={classes.AreaOrgans}>
-      <div className={classes.AreaOrgans__Organs}>
-        {organsData.map((organ) => (
-          <OrganSiteCard key={organ.id} organ={organ} />
-        ))}
+    <div className="row">
+      <h1>Area Organs</h1>
+      <div className={classes.AreaOrgans}>
+        <div className={classes.AreaOrgans__Organs}>
+          {organsData.map((organ) => (
+            <OrganSiteCard key={organ.id} organ={organ} />
+          ))}
+        </div>
       </div>
     </div>
   </Layout>

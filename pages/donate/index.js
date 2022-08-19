@@ -14,37 +14,28 @@ export async function getStaticProps() {
   };
 }
 
-const Donate = ({ globalData }) => {
-  return (
-    <Layout globalData={globalData}>
-      <div className="row">
-        <div>Donate</div>
-        <DonateButton />
+const Donate = ({ globalData }) => (
+  <Layout globalData={globalData}>
+    <div>Donate</div>
+    {/* <div className={`${classes.Black} ${classes.Box}`}></div> */}
+    <div className={`${classes.Grey__dark} ${classes.Box}`}></div>
+    <div className={`${classes.Grey} ${classes.Box}`}></div>
+    <div className={`${classes.Grey__light} ${classes.Box}`}></div>
+    <div className={`${classes.Grey__lighter} ${classes.Box}`}></div>
+    <br />
+    <div className={`${classes.Primary__darker} ${classes.Box}`}></div>
+    <div className={`${classes.Primary__dark} ${classes.Box}`}></div>
+    <div className={`${classes.Primary} ${classes.Box}`}></div>
+    <div className={`${classes.Primary__light} ${classes.Box}`}></div>
+    <div className={`${classes.Primary__lighter} ${classes.Box}`}></div>
+    <br />
+    <div className={`${classes.Secondary__darker} ${classes.Box}`}></div>
+    <div className={`${classes.Secondary__dark} ${classes.Box}`}></div>
+    <div className={`${classes.Secondary} ${classes.Box}`}></div>
+    <div className={`${classes.Secondary__light} ${classes.Box}`}></div>
+    <div className={`${classes.Secondary__lighter} ${classes.Box}`}></div>
 
-        {/* <div className={`${classes.Black} ${classes.Box}`}></div> */}
-        <div className={`${classes.Grey__dark} ${classes.Box}`}></div>
-        <div className={`${classes.Grey} ${classes.Box}`}></div>
-        <div className={`${classes.Grey__light} ${classes.Box}`}></div>
-        <div className={`${classes.Grey__lighter} ${classes.Box}`}></div>
-        <br />
-        <div className={`${classes.Primary__darker} ${classes.Box}`}></div>
-        <div className={`${classes.Primary__dark} ${classes.Box}`}></div>
-        <div className={`${classes.Primary} ${classes.Box}`}></div>
-        <div className={`${classes.Primary__light} ${classes.Box}`}></div>
-        <div className={`${classes.Primary__lighter} ${classes.Box}`}></div>
-        <br />
-        <div className={`${classes.Secondary__darker} ${classes.Box}`}></div>
-        <div className={`${classes.Secondary__dark} ${classes.Box}`}></div>
-        <div className={`${classes.Secondary} ${classes.Box}`}></div>
-        <div className={`${classes.Secondary__light} ${classes.Box}`}></div>
-        <div className={`${classes.Secondary__lighter} ${classes.Box}`}></div>
-      </div>
-      <Script
-        src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"
-        charSet="UTF-8"
-      ></Script>
-    </Layout>
-  );
-};
+  </Layout>
+);
 
 export default Donate;

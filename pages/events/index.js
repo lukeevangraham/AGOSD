@@ -30,7 +30,7 @@ const Events = ({ globalData, eventsData }) => {
     <Layout globalData={globalData}>
       <div className={classes.Events}>
         <div className="row">
-          <div className="u-padding-bottom-medium">Events</div>
+          <h1>Events</h1>
           <div
             className={`${classes.Events__Controls} u-padding-bottom-medium`}
           >

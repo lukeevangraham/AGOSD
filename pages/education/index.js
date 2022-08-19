@@ -16,7 +16,7 @@ export async function getStaticProps() {
 const Education = ({ globalData, educationData }) => (
   <Layout globalData={globalData}>
     <div className="row">
-      <div>Education</div>
+      <h1>Education</h1>
       <section>
         <h2>Scholarships</h2>
         <div

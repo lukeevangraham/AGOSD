@@ -18,7 +18,7 @@ export async function getStaticProps() {
 const SubstituteOrganists = ({ globalData, subOrganistsData }) => (
   <Layout globalData={globalData}>
     <div className="row">
-      <div>Substitute Organists</div>
+      <h1>Substitute Organists</h1>
 
       <div>
         <p>
