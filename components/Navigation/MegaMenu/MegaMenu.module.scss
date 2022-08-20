@@ -19,5 +19,7 @@
 
 @include respond(tab-port) {
   background-color: unset;
+  position: relative;
+  padding-top: 0;
 }
 }
