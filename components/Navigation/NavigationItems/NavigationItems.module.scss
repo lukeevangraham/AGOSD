@@ -3,6 +3,7 @@
 .NavigationItems {
   // background-color: orangered;
   display: flex;
+  flex-grow: 1;
   justify-content: space-evenly;
 
   a {
