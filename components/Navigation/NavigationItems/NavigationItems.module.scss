@@ -1,3 +1,4 @@
+@import "../../../styles/abstracts/mixins";
 @import "../../../styles/abstracts/variables";
 
 .NavigationItems {
@@ -23,9 +24,21 @@
       color: $color-primary-dark;
     }
   }
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    gap: 3rem;
+    font-size: 1.8rem;
+  }
 }
 
 .MegaMenu {
   display: flex;
   justify-content: space-evenly;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    margin-left: 3rem;
+    gap: 3rem;
+  }
 }

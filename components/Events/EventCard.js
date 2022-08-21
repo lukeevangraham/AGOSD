@@ -4,7 +4,6 @@ import classes from "./EventCard.module.scss";
 
 const EventCard = ({ event }) => (
   <div className={classes.EventCard}>
-    {console.log("ED: ", event)}
     <div className={classes.EventCard__Image}>
       <Image
         src={event.attributes.Image.data.attributes.url}

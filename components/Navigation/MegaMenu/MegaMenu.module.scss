@@ -1,3 +1,4 @@
+@import "../../../styles/abstracts/mixins";
 @import "../../../styles/abstracts/variables";
 
 .MegaMenu {
@@ -15,4 +16,10 @@
       color: $color-primary-dark;
     }
   }
+
+@include respond(tab-port) {
+  background-color: unset;
+  position: relative;
+  padding-top: 0;
+}
 }

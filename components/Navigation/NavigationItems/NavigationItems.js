@@ -3,7 +3,7 @@ import NavigationItem from "./NavigationItem/NavigationItem";
 
 import classes from "./NavigationItems.module.scss";
 
-const NavigationItems = ({ links, setMegaMenuContent, megaMenuContent }) => {
+const NavigationItems = ({ links, setMegaMenuContent, megaMenuContent, fromSideDrawer }) => {
   const resources = (
     <div className={classes.MegaMenu}>
       <Link href={"/resources/links"}>
@@ -46,13 +46,14 @@ const NavigationItems = ({ links, setMegaMenuContent, megaMenuContent }) => {
       ))}
       <div
         onClick={() =>
-          megaMenuContent && megaMenuContent.props.children[0].props.href.startsWith("/resources")
+          megaMenuContent &&
+          megaMenuContent.props.children[0].props.href.startsWith("/resources")
             ? setMegaMenuContent(null)
             : setMegaMenuContent(resources)
         }
         className={classes.NavigationItems__MegaMenu}
       >
-        Resources
+        Resources {fromSideDrawer ? megaMenuContent ? " ↑" : " ↓" : null}
       </div>
       {/* <div
         onClick={() =>
