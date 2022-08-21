@@ -1,3 +1,5 @@
+@import "../../../styles/abstracts/variables";
+
 .Backdrop {
     background-color: none;
     backdrop-filter: blur(0);
@@ -12,7 +14,7 @@
   
     &__show {
       backdrop-filter: blur(0.5rem);
-      background-color: #5e7e4f9f;
+      background-color: rgba($color: $color-secondary-darker, $alpha: .6) ;
       z-index: 100;
     }
   

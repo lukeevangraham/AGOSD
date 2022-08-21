@@ -3,6 +3,8 @@ import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 import Toolbar from "../Navigation/Toolbar/Toolbar";
 import MegaMenu from "../../components/Navigation/MegaMenu/MegaMenu";
 
+import classes from "./Layout.module.scss";
+
 const Layout = ({ children, globalData }) => {
   const [megaMenuContent, setMegaMenuContent] = useState(false);
   const [showSideDrawer, setShowSideDrawer] = useState(false);
@@ -25,7 +27,11 @@ const Layout = ({ children, globalData }) => {
         megaMenuContent={megaMenuContent}
         drawerToggleClicked={sideDrawerToggleHandler}
       />
-      {megaMenuContent ? <MegaMenu content={megaMenuContent} /> : null}
+      {megaMenuContent ? (
+        <div className={classes.Layout__MegaMenuToolbar}>
+          <MegaMenu content={megaMenuContent} />
+        </div>
+      ) : null}
       <SideDrawer
         open={showSideDrawer}
         closed={sideDrawerClosedHandler}
