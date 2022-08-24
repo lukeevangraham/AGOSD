@@ -1,5 +1,6 @@
-import Image from "next/image"
+import Image from "next/image";
 import Layout from "../../components/Layout/Layout";
+import SendEmail from "../../components/UI/SendEmail/SendEmail";
 import { getGlobalData } from "../../lib/api";
 import { getBoardData, getAboutData } from "../../lib/about";
 
@@ -24,7 +25,6 @@ const About = ({ globalData, boardData, aboutData }) => (
         <h1 className="heading-primary">About Our Chapter</h1>
         <div className={classes.About__TopInfo}>
           <div>
-            {console.log("AD: ", aboutData)}
             <h2 className="heading-secondary">
               Supporting organists, choir directors and future organists
             </h2>
@@ -44,7 +44,13 @@ const About = ({ globalData, boardData, aboutData }) => (
               organists by several of our chapter members.
             </p>
           </div>
-          <div className={classes.About__TopInfo_Image}><Image src={aboutData.topImage.data.attributes.url} objectFit="cover" layout="fill" /></div>
+          <div className={classes.About__TopInfo_Image}>
+            <Image
+              src={aboutData.topImage.data.attributes.url}
+              objectFit="cover"
+              layout="fill"
+            />
+          </div>
         </div>
 
         <section className={classes.About__Values}>
@@ -66,6 +72,7 @@ const About = ({ globalData, boardData, aboutData }) => (
                 {member.lastName}
               </div>
               <div>{member.email}</div>
+              <SendEmail collection={"/about"} contact={member} />
               <br />
             </div>
           ))}
