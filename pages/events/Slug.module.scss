@@ -1,0 +1,48 @@
+@import "../../styles/abstracts/variables";
+
+.Event {
+  background-color: $color-white;
+  // padding-top: 5rem;
+  padding: 5rem 2rem;
+  &__Image {
+    position: relative;
+    height: 35rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  &__BigInfo {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    svg {
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-right: 0.7rem;
+      fill: $color-black;
+    }
+
+    &__time {
+      display: flex;
+      text-transform: lowercase;
+      align-items: center;
+    }
+
+    &__location {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__Location {
+    margin-bottom: 2rem;
+  }
+}
+
+
+.Container {
+  max-width: 55rem;
+  margin: auto;
+}
