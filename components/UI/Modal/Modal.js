@@ -10,6 +10,7 @@ const Modal = ({ show, modalClosed, children }) => (
       className={classes.Modal}
       style={{ visibility: show ? "visible" : "hidden" }}
     >
+      <div className={classes.Modal__close} onClick={modalClosed}>X</div>
       {children}
     </div>
   </>

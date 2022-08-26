@@ -1,4 +1,7 @@
 import { useState } from "react";
+import Button from "../../Button/Button";
+
+import classes from "./EmailForm.module.scss";
 
 const EmailForm = ({ recipient }) => {
   // const [name, setName] = useState(null)
@@ -42,16 +45,52 @@ const EmailForm = ({ recipient }) => {
       break;
     default:
       emailForm = (
-        <form onSubmit={sendMessage}>
-          <input type="text" name="name" placeholder="Your Name" />
-          <input type="email" name="email" placeholder="Your Email Address" />
-          <input
-            type="textarea"
-            name="body"
-            rows="6"
-            placeholder="Your Message"
-          />
-          <button>Submit</button>
+        <form onSubmit={sendMessage} className={classes.EmailForm}>
+          <div className={classes.EmailForm__group}>
+            <input
+              type="text"
+              className={classes.EmailForm__input}
+              placeholder="Your name"
+              required
+              name="name"
+              id="name"
+            />
+            <label htmlFor="name" className={classes.EmailForm__label}>
+              Full name
+            </label>
+          </div>
+          <div className={classes.EmailForm__group}>
+            <input
+              type="email"
+              className={classes.EmailForm__input}
+              placeholder="Email Address"
+              required
+              name="email"
+              id="email"
+            />
+            <label htmlFor="email" className={classes.EmailForm__label}>
+              Email address
+            </label>
+          </div>
+          <div className={classes.EmailForm__group}>
+            <textarea
+              type="textarea"
+              className={`${classes.EmailForm__input} ${classes.EmailForm__textfield}`}
+              rows="6"
+              placeholder="Your message"
+              name="body"
+              id="body"
+            />
+            <label htmlFor="body" className={classes.EmailForm__label}>
+              Your message
+            </label>
+          </div>
+          <div className={classes.EmailForm__group}>
+            <button>Submit</button>
+            {/* <Button
+              button={{ url: "", text: "submit", type: "primary" }}
+            ></Button> */}
+          </div>
         </form>
       );
       break;

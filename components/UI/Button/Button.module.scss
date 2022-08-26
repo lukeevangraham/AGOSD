@@ -1,0 +1,31 @@
+@import "../../../styles/abstracts/variables";
+
+.Button {
+  background-color: $color-primary;
+
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.8rem;
+    // font-weight: 300;
+    // background-size: 300%;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__primary {
+    background-image: linear-gradient(
+      120deg,
+      $color-primary-light 0%,
+      $color-primary 100%
+    );
+    color: $color-black;
+  }
+}

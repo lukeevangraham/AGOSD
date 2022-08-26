@@ -4,7 +4,7 @@
 .Modal {
   position: fixed;
   z-index: 150;
-  background-color: $color-white;
+  background-color: $color-grey-light;
   width: 70%;
   padding: 1.6rem;
   left: 15%;
@@ -12,6 +12,19 @@
   transform: translateY(-50%);
   box-shadow: 0 1rem 4rem $color-grey-light;
   border-radius: 2%;
+
+  &__close {
+    background-color: rgba($color-grey, .5);
+    border-radius: 3rem;
+    width: 4rem;
+    position: absolute;
+    right: 0;
+    margin-right: 1.6rem;
+    padding: 1rem 0;
+    text-align: center;
+    opacity: .7;
+    cursor: pointer;
+  }
 
   @include respond(tab-port) {
     // width: 100%;
