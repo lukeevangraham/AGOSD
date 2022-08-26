@@ -8,6 +8,7 @@ const Footer = () => (
             <div>Useful Links</div>
             <ul>
                 <li> <Link href="/join"><a> &rsaquo; Join</a></Link></li>
+                <li> <Link href="/resources/area-organs"><a> &rsaquo; Area Organs</a></Link></li>
             </ul>
         </div>
     </div>
