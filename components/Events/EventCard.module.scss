@@ -57,13 +57,21 @@
   }
 
   &__Type {
-    text-align: right;
     position: absolute;
-    bottom: 1rem;
-    right: 0;
-    padding: 0.5rem 1rem;
+    bottom: 0;
+    // height: 20rem;
+    width: 100%;
     color: $color-white;
-    // background-color: orangered;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: .5rem;
+
+    & > * {
+      padding: 0.3rem 1rem;
+      font-size: 1.45rem;
+      border-radius: 1.5rem;
+    }
 
     &_chapter {
       background-color: $color-primary-darker;
