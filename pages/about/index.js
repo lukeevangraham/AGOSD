@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Layout from "../../components/Layout/Layout";
-import SendEmail from "../../components/UI/SendEmail/SendEmail";
+import BoardMember from "../../components/About/BoardMember/BoardMember";
 import { getGlobalData } from "../../lib/api";
 import { getBoardData, getAboutData } from "../../lib/about";
 
@@ -52,30 +52,61 @@ const About = ({ globalData, boardData, aboutData }) => (
             />
           </div>
         </div>
+      </div>
 
-        <section className={classes.About__Values}>
+      <section className={classes.About__Values}>
+        <div className={classes.About__Values__BGImage}>
+          <Image
+            src="https://res.cloudinary.com/dhsn4mic4/image/upload/v1661452111/spreckels_Wide_4c8b6f925f.jpg?updated_at=2022-08-25T18:28:33.044Z"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+        <div className={classes.About__Values__Text}>
           <h2>Our Values</h2>
-          <div className={classes.About__Values__Group}>
-            <div>Education</div>
-            <div>Community</div>
-            <div>Inclusiveness</div>
-            <div>Diversity</div>
+          <div className={classes.About__Values__Text__Group}>
+            {aboutData.Values.map((value) => {
+              let icon = null;
+
+              if (value.Value === "Education") {
+                icon = `../images/sprite.svg#icon-education`;
+              }
+              if (value.Value === "Community") {
+                icon = `../images/sprite.svg#icon-user-group`;
+              }
+              if (value.Value === "Inclusiveness") {
+                icon = `../images/sprite.svg#icon-user-plus`;
+              }
+              if (value.Value === "Diversity") {
+                icon = `../images/sprite.svg#icon-earth`;
+              }
+
+              return (
+                <div key={value.id}>
+                  <svg>
+                    <use xlinkHref={icon}></use>
+                  </svg>
+                  <div className={classes.About__Values__Text__Group_value}>
+                    {value.Value}
+                  </div>
+                  <div>{value.Description}</div>
+                </div>
+              );
+            })}
           </div>
-        </section>
+        </div>
+      </section>
+
+      <div className="row">
         <section>
-          <h2>Our Board</h2>
-          {boardData.map((member) => (
-            <div key={member.id}>
-              <div>{member.Position}</div>
-              <div>
-                {member.Prefix ? member.Prefix : null} {member.firstName}{" "}
-                {member.lastName}
-              </div>
-              <div>{member.email}</div>
-              <SendEmail collection={"/about"} contact={member} />
-              <br />
+          <div className={classes.About__Board}>
+            <h2>Our Board</h2>
+            <div className={classes.About__Board__BoardMembers}>
+              {boardData.map((member) => (
+                <BoardMember member={member} key={member.id} />
+              ))}
             </div>
-          ))}
+          </div>
         </section>
       </div>
     </div>

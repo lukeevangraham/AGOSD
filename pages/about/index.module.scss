@@ -1,4 +1,5 @@
 @import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
 
 .About {
   &__TopInfo {
@@ -17,13 +18,89 @@
     }
   }
   &__Values {
-    &__Group {
-      display: flex;
-      // background-color: orangered;
-      justify-content: space-around;
+    position: relative;
+    background-color: $color-black;
+
+    &__BGImage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // height: 40rem;
+      // height: 100%;
+      opacity: 0.2;
+    }
+
+    &__Text {
+      position: relative;
+      // top: 50%;
+      // transform: translateY(-50%);
+      padding: 8rem 3rem;
+      text-align: center;
+      color: $color-white;
+
+      h2 {
+        margin-bottom: 4rem;
+        font-weight: 300;
+      }
+
+      &__Group {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        line-height: 1.5;
+        padding-bottom: 1rem;
+
+        @include respond(tab-port) {
+          flex-direction: column;
+          gap: 4rem;
+        }
+
+        & > * {
+          position: relative;
+          padding: 0 2rem;
+
+          svg {
+            width: 3rem;
+            height: 3rem;
+            fill: $color-primary;
+            margin-bottom: 0.7rem;
+          }
+        }
+
+        & > *:not(:last-child)::after {
+          // background-color: orangered;
+          content: "";
+          position: absolute;
+          top: 3rem;
+          right: 0;
+          width: 1px;
+          height: calc(100% - 3rem);
+          background-color: rgba($color-white, 0.2);
+
+          @include respond(tab-port) {
+            width: 0;
+          }
+        }
+
+        &_value {
+          margin-bottom: 1rem;
+          font-size: 133%;
+        }
+      }
     }
   }
 
   &__Board {
+    h2 {
+      margin-bottom: 5rem;
+      text-align: center;
+    }
+    &__BoardMembers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+      gap: 3rem;
+    }
   }
 }
