@@ -6,7 +6,7 @@ import classes from "./BoardMember.module.scss";
 const BoardMember = ({ member }) => (
   <div className={classes.BoardMember}>
     <div className={classes.BoardMember__Image}>
-      {console.log("M: ", member)}
+      {/* {console.log("M: ", member)} */}
       {member.Image.data ? (
         <Image
           src={member.Image.data.attributes.url}
@@ -19,8 +19,9 @@ const BoardMember = ({ member }) => (
         </svg>
       )}
       <div className={classes.BoardMember__Image__Overlay}>
-
-      <div className={classes.BoardMember__Image__Overlay_text}>{member.shortBio}</div>
+        <div className={classes.BoardMember__Image__Overlay_text}>
+          {member.shortBio}
+        </div>
       </div>
     </div>
     <div className={classes.BoardMember__Name}>
