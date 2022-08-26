@@ -10,8 +10,8 @@ const SendEmail = ({ collection, contact }) => {
   let email = (
     <div className={classes.SendEmail}>
       <svg>
-          <use xlinkHref="../images/sprite.svg#icon-envelope"></use>
-        </svg>
+        <use xlinkHref="../images/sprite.svg#icon-envelope"></use>
+      </svg>
       <a>
         <div onClick={() => setShowModal(true)}>Email {contact.firstName}</div>
       </a>

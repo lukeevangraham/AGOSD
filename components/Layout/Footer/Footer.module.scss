@@ -1,0 +1,23 @@
+@import "../../../styles/abstracts/variables";
+
+.Footer {
+  background-color: $color-primary-light;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-around;
+
+  &__UsefulLinks {
+    font-weight: 700;
+
+    ul {
+        margin-top: 1rem;
+        li {
+            list-style: none;
+            font-weight: 400;
+            margin-left: 1.5rem;
+      
+            a {text-decoration: none;}
+          }
+    } 
+  }
+}
