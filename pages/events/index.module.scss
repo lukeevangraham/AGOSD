@@ -12,11 +12,36 @@
     }
 
     &_button {
-      background-color: $color-secondary-light;
-      padding: .5rem 1rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      background-color: $color-primary;
+      transition: all 0.2s;
+      border-radius: 10rem;
+      padding: 0.5rem 2rem;
+      color: rgba($color-grey-dark, 0.8);
+
+      &_chapter {
+        background-color: $color-primary-darker;
+        color: $color-white;
+      }
+      &_community {
+        background-color: $color-secondary-dark;
+        color: $color-white;
+      }
+      &_student {
+        background-color: $color-primary-light;
+      }
 
       &:hover {
         cursor: pointer;
+        transform: translateY(-.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      }
+
+      &:active, &:focus {
+        outline: none;
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
       }
     }
   }

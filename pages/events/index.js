@@ -22,7 +22,7 @@ const Events = ({ globalData, eventsData }) => {
 
   let renderEvents = filter
     ? eventsData
-        .filter((event) => event.attributes.Type === filter)
+        .filter((event) => event.attributes.EventType[filter])
         .map((event) => <EventCard key={event.id} event={event} />)
     : eventsData.map((event) => <EventCard key={event.id} event={event} />);
 
@@ -36,26 +36,26 @@ const Events = ({ globalData, eventsData }) => {
           >
             <div>Filter:</div>
             <div
-              className={classes.Events__Controls_button}
+              className={`${classes.Events__Controls_button}`}
               onClick={() => setFilter(null)}
             >
               Show All
             </div>
             <div
-              className={classes.Events__Controls_button}
-              onClick={() => setFilter("AGO Chapter Event")}
+              className={`${classes.Events__Controls_button} ${classes.Events__Controls_button_chapter}`}
+              onClick={() => setFilter("AGOChapter")}
             >
               AGO Chapter Events
             </div>
             <div
-              className={classes.Events__Controls_button}
-              onClick={() => setFilter("Community-Sponsored Event")}
+              className={`${classes.Events__Controls_button}  ${classes.Events__Controls_button_community}`}
+              onClick={() => setFilter("CommunitySponsored")}
             >
               Community-Sposored Events
             </div>
             <div
-              className={classes.Events__Controls_button}
-              onClick={() => setFilter("Student Event")}
+              className={`${classes.Events__Controls_button} ${classes.Events__Controls_button_student}`}
+              onClick={() => setFilter("Student")}
             >
               Student Events
             </div>

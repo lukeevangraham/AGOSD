@@ -14,16 +14,22 @@
   border-radius: 2%;
 
   &__close {
-    background-color: rgba($color-grey, .5);
-    border-radius: 3rem;
-    width: 4rem;
+    background-color: rgba($color-grey-light, 1);
+    // color: $color-white;
+    border-radius: 0 .2rem 0 .5rem;
+    width: 3.5rem;
     position: absolute;
     right: 0;
     margin-right: 1.6rem;
-    padding: 1rem 0;
+    padding: .5rem 0;
     text-align: center;
-    opacity: .7;
+    // opacity: .7;
     cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+      background-color: $color-grey;
+    }
   }
 
   @include respond(tab-port) {
