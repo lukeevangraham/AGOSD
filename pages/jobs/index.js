@@ -25,12 +25,13 @@ const Jobs = ({ globalData, jobsData, placementData }) => (
     <div className="row">
       <div className={classes.Jobs}>
         <h1>Jobs</h1>
-        <div>
+        <div className={classes.Jobs__Rates}>
           <div>Advertising Rates</div>
           <div>$35 per listing for up to six months.</div>
           <div>
             Contact{" "}
-            {`${placementData.firstName} ${placementData.lastName}, ${placementData.Position} by email at ${placementData.email}`}
+            {`${placementData.firstName} ${placementData.lastName}, ${placementData.Position} `}{" "}
+            <br /> {`by email at `} <a href={`mailto:${placementData.email}`}>{placementData.email}</a>.
           </div>
         </div>
         <div className={classes.Jobs__Group}>
