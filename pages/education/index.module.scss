@@ -1,0 +1,85 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
+
+.Welcome {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+
+  @include respond(tab-port) {
+    flex-direction: column-reverse;
+  }
+
+  &__Image {
+    position: relative;
+    // height: 25rem;
+    aspect-ratio: 3 / 3;
+    width: 40%;
+    flex-shrink: 0;
+    border-radius: 0.6rem;
+    overflow: hidden;
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+}
+
+.Scholarships {
+  &__Main {
+    display: flex;
+    gap: 5rem;
+
+    &__Body {
+      // max-width: 55rem;
+      //   flex-basis: 65%;
+      //   flex-shrink: 0;
+      flex: 0 0 60%;
+    }
+
+    &__CTA {
+      //   background-color: orangered;
+      background-color: $color-grey-light;
+      padding: 3rem;
+      border-radius: 1rem;
+      height: min-content;
+      //   flex-grow: 1;
+
+      &__docs {
+        margin-top: 4rem;
+
+        a {
+          text-decoration: none;
+        }
+
+        &_doc {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          margin: 1.5rem 0;
+          background-color: rgba($color-grey-lighter, 0.5);
+          padding: 0.9rem;
+          border-radius: 0.7rem;
+          transition: all 0.3s;
+
+          svg {
+            fill: $color-primary-darker;
+            width: 4rem;
+            height: 4rem;
+            background-color: $color-white;
+            border-radius: .5rem;
+            padding: .5rem;
+          }
+
+          &:hover {
+            background-color: rgba($color-grey, 0.5);
+          }
+        }
+      }
+    }
+  }
+}
+
+.WhiteBg {
+  background-color: $color-white;
+}
