@@ -31,7 +31,8 @@ const Jobs = ({ globalData, jobsData, placementData }) => (
           <div>
             Contact{" "}
             {`${placementData.firstName} ${placementData.lastName}, ${placementData.Position} `}{" "}
-            <br /> {`by email at `} <a href={`mailto:${placementData.email}`}>{placementData.email}</a>.
+            <br /> {`by email at `}{" "}
+            <a href={`mailto:${placementData.email}`}>{placementData.email}</a>.
           </div>
         </div>
         <div className={classes.Jobs__Group}>
