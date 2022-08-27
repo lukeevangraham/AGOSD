@@ -79,7 +79,7 @@ const Education = ({ globalData, educationData }) => {
                       <div>Application</div>
                     </div>
                   </a>
-                  <Link href="/">
+                  <Link href="/education/payment">
                     <a>
                       <div
                         className={classes.Scholarships__Main__CTA__docs_doc}
