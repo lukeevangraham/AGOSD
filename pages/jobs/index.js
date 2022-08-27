@@ -49,9 +49,11 @@ const Jobs = ({ globalData, jobsData, placementData }) => (
                   </svg>
                 )}
               </div>
-              <div key={job.id}>
+              <div className={classes.Jobs__Group__Job__Info}>
                 <h2>{job.attributes.Position}</h2>
-                <div>{job.attributes.Employer}</div>
+                <div className={classes.Jobs__Group__Job__Info__Employer}>
+                  {job.attributes.Employer}
+                </div>
                 <div>{job.attributes.EmployerAddress.addressLineOne}</div>
                 <div>{job.attributes.EmployerAddress.addressLineTwo}</div>
                 <div>
@@ -65,6 +67,7 @@ const Jobs = ({ globalData, jobsData, placementData }) => (
                   dangerouslySetInnerHTML={{
                     __html: job.attributes.Description,
                   }}
+                  className={classes.Jobs__Group__Job__Info__Description}
                 ></div>
               </div>
             </div>

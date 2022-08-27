@@ -11,12 +11,18 @@
 
     &__Job {
       display: flex;
-      gap: 4rem;
+      //   gap: 4rem;
+      justify-content: space-between;
+      background-color: $color-grey-light;
+      border-radius: 1rem;
+      padding: 2rem;
+    //   align-items: center;
 
       &__Image {
         position: relative;
         // height: 5rem;
-        width: 40%;
+        flex: 0 0 48%;
+        // width: 50%;
         aspect-ratio: 8 / 5;
         flex-shrink: 0;
         height: min-content;
@@ -30,6 +36,19 @@
           padding: 2rem;
           border-radius: 1rem;
           overflow: hidden;
+        }
+      }
+
+      &__Info {
+        // background-color: orangered;
+        flex: 0 0 48%;
+
+        &__Employer {
+            font-weight: 800;
+        }
+
+        &__Description {
+            margin-top: 2rem;
         }
       }
 
