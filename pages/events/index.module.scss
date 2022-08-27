@@ -4,44 +4,67 @@
   &__Controls {
     display: flex;
     align-items: center;
+    // flex-wrap: wrap;
     gap: 1rem;
+    background-color: rgba($color-grey, 0.3);
+    margin-bottom: 5rem;
+    padding: 2rem;
+    border-radius: 0.8rem;
 
-    & :first-child {
+    &__Label {
+      // background-color: orangered;
       margin-right: 1rem;
-      font-weight: 700;
     }
 
-    &_button {
-      text-transform: uppercase;
-      text-decoration: none;
-      background-color: $color-primary;
-      transition: all 0.2s;
-      border-radius: 10rem;
-      padding: 0.5rem 2rem;
-      color: rgba($color-grey-dark, 0.8);
+    & :nth-child(2) {
+      // width: 100%;
+    }
 
-      &_chapter {
-        background-color: $color-primary-darker;
-        color: $color-white;
-      }
-      &_community {
-        background-color: $color-secondary-dark;
-        color: $color-white;
-      }
-      &_student {
-        background-color: $color-primary-light;
-      }
+    &__Buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      // justify-content: space-between;
+      // background-color: orangered;
+      width: 100%;
 
-      &:hover {
-        cursor: pointer;
-        transform: translateY(-.3rem);
-        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
-      }
+      &_button {
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: $color-primary;
+        transition: all 0.2s;
+        border-radius: 10rem;
+        padding: 0.5rem 2rem;
+        color: rgba($color-grey-dark, 0.8);
+        text-align: center;
+flex-grow: 0;
+flex-shrink: 0;
+        // margin: auto;
 
-      &:active, &:focus {
-        outline: none;
-        transform: translateY(-0.1rem);
-        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+        &_chapter {
+          background-color: $color-primary-darker;
+          color: $color-white;
+        }
+        &_community {
+          background-color: $color-secondary-dark;
+          color: $color-white;
+        }
+        &_student {
+          background-color: $color-primary-light;
+        }
+
+        &:hover {
+          cursor: pointer;
+          transform: translateY(-0.3rem);
+          box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+        }
+
+        &:active,
+        &:focus {
+          outline: none;
+          transform: translateY(-0.1rem);
+          box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+        }
       }
     }
   }
@@ -49,7 +72,7 @@
   &__Group {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
-    gap: 2rem;
+    gap: 4rem;
     // display: flex;
     // flex-wrap: wrap;
 

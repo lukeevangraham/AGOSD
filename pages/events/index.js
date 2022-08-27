@@ -31,33 +31,33 @@ const Events = ({ globalData, eventsData }) => {
       <div className={classes.Events}>
         <div className="row">
           <h1>Events</h1>
-          <div
-            className={`${classes.Events__Controls} u-padding-bottom-medium`}
-          >
-            <div>Filter:</div>
-            <div
-              className={`${classes.Events__Controls_button}`}
-              onClick={() => setFilter(null)}
-            >
-              Show All
-            </div>
-            <div
-              className={`${classes.Events__Controls_button} ${classes.Events__Controls_button_chapter}`}
-              onClick={() => setFilter("AGOChapter")}
-            >
-              AGO Chapter Events
-            </div>
-            <div
-              className={`${classes.Events__Controls_button}  ${classes.Events__Controls_button_community}`}
-              onClick={() => setFilter("CommunitySponsored")}
-            >
-              Community-Sposored Events
-            </div>
-            <div
-              className={`${classes.Events__Controls_button} ${classes.Events__Controls_button_student}`}
-              onClick={() => setFilter("Student")}
-            >
-              Student Events
+          <div className={`${classes.Events__Controls}`}>
+            <div className={classes.Events__Controls__Label}>Filter:</div>
+            <div className={classes.Events__Controls__Buttons}>
+              <div
+                className={`${classes.Events__Controls__Buttons_button}`}
+                onClick={() => setFilter(null)}
+              >
+                Show All
+              </div>
+              <div
+                className={`${classes.Events__Controls__Buttons_button} ${classes.Events__Controls__Buttons_button_chapter}`}
+                onClick={() => setFilter("AGOChapter")}
+              >
+                AGO Chapter Events
+              </div>
+              <div
+                className={`${classes.Events__Controls__Buttons_button}  ${classes.Events__Controls__Buttons_button_community}`}
+                onClick={() => setFilter("CommunitySponsored")}
+              >
+                Community-Sposored Events
+              </div>
+              <div
+                className={`${classes.Events__Controls__Buttons_button} ${classes.Events__Controls__Buttons_button_student}`}
+                onClick={() => setFilter("Student")}
+              >
+                Student Events
+              </div>
             </div>
           </div>
           <div className={classes.Events__Group}>{renderEvents}</div>
