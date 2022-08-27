@@ -1,0 +1,41 @@
+@import "../../styles/abstracts/variables";
+
+.Jobs {
+  // background-color: orangered;
+
+  &__Group {
+    margin-top: 2rem;
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+
+    &__Job {
+      display: flex;
+      gap: 4rem;
+
+      &__Image {
+        position: relative;
+        // height: 5rem;
+        width: 40%;
+        aspect-ratio: 8 / 5;
+        flex-shrink: 0;
+        height: min-content;
+        border-radius: 1rem;
+        overflow: hidden;
+
+        svg {
+          fill: $color-secondary-dark;
+          background-color: $color-primary-lighter;
+          width: 100%;
+          padding: 2rem;
+          border-radius: 1rem;
+          overflow: hidden;
+        }
+      }
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
