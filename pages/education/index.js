@@ -37,7 +37,8 @@ const Education = ({ globalData, educationData }) => {
         </section>
       </div>
       <div className={classes.WhiteBg}>
-        <div className="row u-padding-top-medium u-padding-bottom-medium">
+        <div className="u-padding-top-medium u-padding-bottom-medium">
+          <div className="row">
           <section className={classes.Scholarships}>
             <h2>Scholarships</h2>
             <h3>AGO/Spreckels Scholarship Auditions</h3>
@@ -96,6 +97,7 @@ const Education = ({ globalData, educationData }) => {
             </div>
           </section>
         </div>
+      </div>
       </div>
 
       <div className="row">
