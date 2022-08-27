@@ -56,7 +56,7 @@ const Education = ({ globalData, educationData }) => {
                 />
                 <div className={classes.Scholarships__Main__CTA__docs}>
                   {educationData.ScholarshipsDocuments.data.map((doc) => (
-                    <a href={doc.attributes.url} target="_blank" key={doc.id}>
+                    <a href={doc.attributes.url} target="_blank" key={doc.id} rel="noreferrer">
                       <div
                         className={classes.Scholarships__Main__CTA__docs_doc}
                       >
@@ -70,6 +70,7 @@ const Education = ({ globalData, educationData }) => {
                   <a
                     href={educationData.ScholarshipsApplication}
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <div className={classes.Scholarships__Main__CTA__docs_doc}>
                       <svg>
