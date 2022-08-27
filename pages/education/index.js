@@ -37,68 +37,74 @@ const Education = ({ globalData, educationData }) => {
         </section>
       </div>
       <div className={classes.WhiteBg}>
-        <div className="u-padding-top-medium u-padding-bottom-medium">
+        <div className="u-padding-bottom-medium">
           <div className="row">
-            <section className={classes.Scholarships}>
-              <h2>Scholarships</h2>
-              <h3>AGO/Spreckels Scholarship Auditions</h3>
-              <div className={classes.Scholarships__Main}>
-                <div
-                  className={classes.Scholarships__Main__Body}
-                  dangerouslySetInnerHTML={{
-                    __html: educationData.ScholarshipsContent,
-                  }}
-                />
-                <div className={classes.Scholarships__Main__CTA}>
+            <section>
+              <div className={classes.Scholarships}>
+                <h2>Scholarships</h2>
+                <h3>AGO/Spreckels Scholarship Auditions</h3>
+                <div className={classes.Scholarships__Main}>
                   <div
+                    className={classes.Scholarships__Main__Body}
                     dangerouslySetInnerHTML={{
-                      __html: educationData.ScholarshipsCTA,
+                      __html: educationData.ScholarshipsContent,
                     }}
                   />
-                  <div className={classes.Scholarships__Main__CTA__docs}>
-                    {educationData.ScholarshipsDocuments.data.map((doc) => (
+                  <div className={classes.Scholarships__Main__CTA}>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: educationData.ScholarshipsCTA,
+                      }}
+                    />
+                    <div className={classes.Scholarships__Main__CTA__docs}>
+                      {educationData.ScholarshipsDocuments.data.map((doc) => (
+                        <a
+                          href={doc.attributes.url}
+                          target="_blank"
+                          key={doc.id}
+                          rel="noreferrer"
+                        >
+                          <div
+                            className={
+                              classes.Scholarships__Main__CTA__docs_doc
+                            }
+                          >
+                            <svg>
+                              <use xlinkHref="../images/sprite.svg#icon-file-pdf"></use>
+                            </svg>
+                            <div>{doc.attributes.name.split(".pdf")[0]}</div>
+                          </div>
+                        </a>
+                      ))}
                       <a
-                        href={doc.attributes.url}
+                        href={educationData.ScholarshipsApplication}
                         target="_blank"
-                        key={doc.id}
                         rel="noreferrer"
                       >
                         <div
                           className={classes.Scholarships__Main__CTA__docs_doc}
                         >
                           <svg>
-                            <use xlinkHref="../images/sprite.svg#icon-file-pdf"></use>
+                            <use xlinkHref="../images/sprite.svg#icon-pen"></use>
                           </svg>
-                          <div>{doc.attributes.name.split(".pdf")[0]}</div>
+                          <div>Application</div>
                         </div>
                       </a>
-                    ))}
-                    <a
-                      href={educationData.ScholarshipsApplication}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <div
-                        className={classes.Scholarships__Main__CTA__docs_doc}
-                      >
-                        <svg>
-                          <use xlinkHref="../images/sprite.svg#icon-pen"></use>
-                        </svg>
-                        <div>Application</div>
-                      </div>
-                    </a>
-                    <Link href="/education/payment">
-                      <a>
-                        <div
-                          className={classes.Scholarships__Main__CTA__docs_doc}
-                        >
-                          <svg>
-                            <use xlinkHref="../images/sprite.svg#icon-currency-dollar"></use>
-                          </svg>
-                          <div>Fee</div>
-                        </div>
-                      </a>
-                    </Link>
+                      <Link href="/education/payment">
+                        <a>
+                          <div
+                            className={
+                              classes.Scholarships__Main__CTA__docs_doc
+                            }
+                          >
+                            <svg>
+                              <use xlinkHref="../images/sprite.svg#icon-currency-dollar"></use>
+                            </svg>
+                            <div>Fee</div>
+                          </div>
+                        </a>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

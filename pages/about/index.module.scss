@@ -32,6 +32,10 @@
     position: relative;
     background-color: $color-black;
 
+h2  {
+  color: $color-white;
+}
+
     &__BGImage {
       position: absolute;
       top: 0;

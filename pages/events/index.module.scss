@@ -31,27 +31,30 @@
       &_button {
         text-transform: uppercase;
         text-decoration: none;
-        background-color: $color-primary;
+        background-color: $color-secondary-darker;
+        color: $color-white !important;
+        // color: $color-white;
         transition: all 0.2s;
         border-radius: 10rem;
         padding: 0.5rem 2rem;
         color: rgba($color-grey-dark, 0.8);
         text-align: center;
-flex-grow: 0;
-flex-shrink: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
         // margin: auto;
 
-        &_chapter {
-          background-color: $color-primary-darker;
-          color: $color-white;
-        }
-        &_community {
-          background-color: $color-secondary-dark;
-          color: $color-white;
-        }
-        &_student {
-          background-color: $color-primary-light;
-        }
+        // &_chapter {
+        //   background-color: $color-primary-darker;
+        //   color: $color-white;
+        // }
+        // &_community {
+        //   background-color: $color-secondary-dark;
+        //   color: $color-white;
+        // }
+        // &_student {
+        //   background-color: $color-grey;
+        //   color: $color-white;
+        // }
 
         &:hover {
           cursor: pointer;
