@@ -8,10 +8,29 @@
   align-items: center;
   justify-content: space-between;
 
-  &__Logo {
-    position: relative;
-    width: 10rem;
-    height: 10rem;
+  &__Brand {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &__Logo {
+      position: relative;
+      width: 10rem;
+      height: 10rem;
+    }
+
+    &__Name {
+      // width: 5rem;
+      color: $color-primary;
+
+      & :first-child {
+        font-size: 1.5rem;
+      }
+
+      & div:nth-child(2) {
+        font-size: 3rem;
+      }
+    }
   }
 
   &__DesktopOnly {

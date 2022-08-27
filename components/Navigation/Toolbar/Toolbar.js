@@ -13,8 +13,17 @@ const Toolbar = ({
 }) => (
   <div className={classes.Toolbar}>
     <Link href="/">
-      <div className={classes.Toolbar__Logo}>
-        <Image src={globalData.Navbar.logo.data.attributes.url} layout="fill" />
+      <div className={classes.Toolbar__Brand}>
+        <div className={classes.Toolbar__Brand__Logo}>
+          <Image
+            src={globalData.Navbar.logo.data.attributes.url}
+            layout="fill"
+          />
+        </div>
+        <div className={classes.Toolbar__Brand__Name}>
+          <div>American Guild of Organists</div>
+          <div>San Diego</div>
+        </div>
       </div>
     </Link>
     <div className={classes.Toolbar__DesktopOnly}>

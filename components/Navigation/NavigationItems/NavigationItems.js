@@ -3,7 +3,12 @@ import NavigationItem from "./NavigationItem/NavigationItem";
 
 import classes from "./NavigationItems.module.scss";
 
-const NavigationItems = ({ links, setMegaMenuContent, megaMenuContent, fromSideDrawer }) => {
+const NavigationItems = ({
+  links,
+  setMegaMenuContent,
+  megaMenuContent,
+  fromSideDrawer,
+}) => {
   const resources = (
     <div className={classes.MegaMenu}>
       <Link href={"/resources/links"}>
@@ -53,7 +58,7 @@ const NavigationItems = ({ links, setMegaMenuContent, megaMenuContent, fromSideD
         }
         className={classes.NavigationItems__MegaMenu}
       >
-        Resources {fromSideDrawer ? megaMenuContent ? " ↑" : " ↓" : null}
+        Resources {fromSideDrawer ? (megaMenuContent ? " ↑" : " ↓") : null}
       </div>
       {/* <div
         onClick={() =>
