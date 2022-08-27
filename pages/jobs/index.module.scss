@@ -30,12 +30,13 @@
         overflow: hidden;
 
         svg {
-          fill: $color-secondary-dark;
+          fill: rgba($color-secondary-dark, .7);
           background-color: $color-primary-lighter;
           width: 100%;
-          padding: 2rem;
+          padding: 5rem;
           border-radius: 1rem;
           overflow: hidden;
+          aspect-ratio: 8 / 5;
         }
       }
 
