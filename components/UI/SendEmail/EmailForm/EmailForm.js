@@ -63,7 +63,7 @@ const EmailForm = ({ recipient }) => {
             <input
               type="email"
               className={classes.EmailForm__input}
-              placeholder="Email Address"
+              placeholder="Your email address"
               required
               name="email"
               id="email"

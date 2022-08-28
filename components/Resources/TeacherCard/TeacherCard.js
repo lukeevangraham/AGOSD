@@ -15,7 +15,6 @@ const TeacherCard = ({ teacher }) => (
       ) : (
         <UserImageBlank />
       )}
-      {console.log("T: ", teacher)}
     </div>
     <div className={classes.TeacherCard__Info}>
       <div className={classes.TeacherCard__Info_name}>
