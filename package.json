@@ -18,7 +18,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-reveal": "^1.2.2",
-    "sass": "^1.54.0"
+    "sass": "^1.54.0",
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
     "eslint": "8.20.0",
