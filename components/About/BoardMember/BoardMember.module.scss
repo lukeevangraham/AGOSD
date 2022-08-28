@@ -47,6 +47,11 @@
       width: 100%;
       padding: 4rem;
     }
+
+    &:hover &__Overlay {
+      visibility: visible;
+      opacity: 1;
+    }
   }
 
   &__Name {
@@ -56,11 +61,12 @@
 
   &__Position {
     font-weight: 900;
-    // margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
-  &:hover &__Image__Overlay {
-    visibility: visible;
-    opacity: 1;
+  &__SendMail {
+    // background-color: orangered;
   }
+
+  
 }

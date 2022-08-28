@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SendEmail from "../../UI/SendEmail/SendEmail";
+import UserImageBlank from "../../UI/UserImageBlank/UserImageBlank";
 
 import classes from "./BoardMember.module.scss";
 
@@ -14,9 +15,10 @@ const BoardMember = ({ member }) => (
           objectFit="cover"
         />
       ) : (
-        <svg>
-          <use xlinkHref="../images/sprite.svg#icon-user"></use>
-        </svg>
+        <UserImageBlank />
+        // <svg>
+        //   <use xlinkHref="../images/sprite.svg#icon-user"></use>
+        // </svg>
       )}
       <div className={classes.BoardMember__Image__Overlay}>
         <div className={classes.BoardMember__Image__Overlay_text}>
@@ -29,7 +31,9 @@ const BoardMember = ({ member }) => (
       {member.lastName}
     </div>
     <div className={classes.BoardMember__Position}>{member.Position}</div>
-    <SendEmail collection={"/about"} contact={member} />
+    <div className={classes.BoardMember__SendMail}>
+      <SendEmail collection={"/about"} contact={member} source="BoardMember" />
+    </div>
   </div>
 );
 
