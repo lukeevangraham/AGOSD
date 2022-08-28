@@ -1,0 +1,46 @@
+@import "../../../styles/abstracts/variables";
+
+.LinkCard {
+  // background-color: orangered;
+  box-shadow: 0 0 1rem $color-grey;
+  background-color: $color-primary-lighter;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  position: relative;
+  padding-bottom: 2rem;
+
+  &__Image {
+    position: relative;
+    height: 20rem;
+    // aspect-ratio: 16/9;
+  }
+
+  &__Info {
+    padding: 2rem;
+
+    &__Description {
+      margin-top: 2rem;
+    }
+
+    a {
+      color: $color-primary-darker;
+      font-size: 2rem;
+    //   text-decoration: none;
+    }
+  }
+
+  &__Category {
+    font-size: 1.4rem;
+    background-color: $color-secondary-light;
+    width: fit-content;
+    padding: 0.25rem 1rem;
+    border-radius: 10rem;
+    // margin-left: auto;
+    // margin-right: 0;
+    color: $color-grey-dark;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  margin-top: 1rem;
+}

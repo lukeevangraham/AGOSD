@@ -1,5 +1,6 @@
 // import Link from "next/link";
 import Layout from "../../components/Layout/Layout";
+import LinkCard from "../../components/Resources/LinkCard/LinkCard";
 import { getGlobalData } from "../../lib/api";
 import { getLinkData } from "../../lib/resources";
 
@@ -16,22 +17,55 @@ export async function getStaticProps() {
   };
 }
 
-const Links = ({ globalData, linkData }) => (
-  <Layout globalData={globalData}>
-    <div className={classes.Links}>
-      <div className="row">
-        <h1>Links</h1>
-        {linkData.map((link) => (
-          <div className={classes.Links__Link} key={link.id}>
-            <a target="_blank" href={link.url} rel="noreferrer">
-              {link.text}
-            </a>
-            <div dangerouslySetInnerHTML={{ __html: link.Description }}></div>
-          </div>
-        ))}
-      </div>
+const Links = ({ globalData, linkData }) => {
+  const renderLinkList = (links) => (
+    <div className={classes.Grid}>
+      {links.map((link) => (
+        <LinkCard link={link} />
+      ))}
     </div>
-  </Layout>
-);
+  );
+
+  return (
+    <Layout globalData={globalData}>
+      <div className={classes.Links}>
+        <div className="row">
+          <h1>Links</h1>
+          <div className={classes.Links__Group}>
+            {/* <h2>AGO National</h2> */}
+            {/* {renderLinkList(
+              linkData.filter((link) => link.Category === "AGO National")
+            )}
+          </div>
+          <div className={classes.Links__Group}>
+            <h2>Sister Chapters</h2>
+            {renderLinkList(
+              linkData.filter((link) => link.Category === "Sister Chapters")
+            )}
+          </div>
+          <div className={classes.Links__Group}>
+            <h2>Education</h2>
+            {renderLinkList(
+              linkData.filter((link) => link.Category === "Education")
+            )}
+          </div>
+          <div className={classes.Links__Group}>
+            <h2>Partner Organizations</h2>
+            {renderLinkList(
+              linkData.filter(
+                (link) => link.Category === "Partner Organizations"
+              )
+            )} */}
+            <div className={classes.Grid}>
+              {linkData.map((link) => (
+                <LinkCard link={link} key={link.id} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
 
 export default Links;
