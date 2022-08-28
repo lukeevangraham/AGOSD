@@ -1,29 +1,28 @@
 @import "../../styles/abstracts/variables";
 
+.SubOrganists {
+  display: flex;
+  gap: 4rem;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  &__Image {
+    position: relative;
+    width: 40%;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem $color-grey-dark;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
 .Organists {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   gap: 2rem;
-
-  &__Organist {
-    background-color: $color-white;
-    padding: 1rem;
-    list-style-position: inside;
-
-    a {
-      color: $color-primary-darker;
-
-      &:hover {
-        color: $color-black;
-      }
-    }
-
-    &_name {
-        font-size: 2rem;
-    }
-
-    &_availability {
-        margin-top: 1rem;
-    }
-  }
 }

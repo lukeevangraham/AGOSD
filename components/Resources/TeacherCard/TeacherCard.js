@@ -32,13 +32,16 @@ const TeacherCard = ({ teacher }) => (
         <a
           href={teacher.attributes.Website}
           className={classes.TeacherCard__Info__Link}
-          target="_blank" rel="noreferrer"
+          target="_blank"
+          rel="noreferrer"
         >
           <svg>
             <use xlinkHref="../images/sprite.svg#icon-link"></use>
           </svg>
 
-          <div style={{ textDecoration: "none" }}> Website</div>
+          <div style={{ textDecoration: "none" }}>
+            {teacher.attributes.Website}
+          </div>
         </a>
       ) : null}
     </div>
