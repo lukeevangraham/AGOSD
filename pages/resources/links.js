@@ -21,7 +21,7 @@ const Links = ({ globalData, linkData }) => {
   const renderLinkList = (links) => (
     <div className={classes.Grid}>
       {links.map((link) => (
-        <LinkCard link={link} />
+        <LinkCard link={link} key={link.id} />
       ))}
     </div>
   );
