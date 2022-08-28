@@ -86,7 +86,7 @@
 }
 
 .WhiteBg {
-  background-color: rgba($color-primary-light, .25);
+  background-color: rgba($color-primary-light, 0.25);
   // box-shadow: 0 0 20px rgba(black, .5);
 }
 
@@ -104,5 +104,14 @@
     flex: 0 0 40%;
     border-radius: 1.2rem;
     overflow: hidden;
+
+    @include respond(tab-port) {
+      flex: unset;
+      height: 30rem;
+    }
+  }
+
+  @include respond(tab-port) {
+    flex-direction: column;
   }
 }
