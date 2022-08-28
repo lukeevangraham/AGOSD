@@ -4,6 +4,8 @@ import { getEvents } from "../../lib/events";
 import Layout from "../../components/Layout/Layout";
 import EventCard from "../../components/Events/EventCard";
 
+import Fade from "react-reveal";
+
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
@@ -60,7 +62,9 @@ const Events = ({ globalData, eventsData }) => {
               </div>
             </div>
           </div>
-          <div className={classes.Events__Group}>{renderEvents}</div>
+          <Fade bottom cascade duration={1500}>
+            <div className={classes.Events__Group}>{renderEvents}</div>
+          </Fade>
         </div>
       </div>
     </Layout>
