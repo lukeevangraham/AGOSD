@@ -23,7 +23,7 @@ const OrganTeachers = ({ globalData, teachersData }) => (
       {console.log("TD: ", teachersData)}
       <div className={classes.Teachers}>
         {teachersData.map((teacher) => (
-          <TeacherCard teacher={teacher} />
+          <TeacherCard teacher={teacher} key={teacher.id} />
         ))}
       </div>
     </div>
