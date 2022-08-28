@@ -9,7 +9,7 @@ const Footer = () => (
       <ul>
         <li>
           {" "}
-          <Link href="/join">
+          <Link href="/registration">
             <a> &rsaquo; Join</a>
           </Link>
         </li>

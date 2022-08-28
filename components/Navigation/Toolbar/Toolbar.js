@@ -23,6 +23,7 @@ const Toolbar = ({
         <div className={classes.Toolbar__Brand__Name}>
           <div>American Guild of Organists</div>
           <div>San Diego</div>
+          <div>Chapter</div>
         </div>
       </div>
     </Link>

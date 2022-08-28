@@ -43,6 +43,7 @@
   &__Availability {
     // background-color: orangered;
     margin-top: 1rem;
+    font-weight: 700;
 
     ul {
       list-style: none;
@@ -51,6 +52,7 @@
       margin-top: 0.5rem;
       gap: 0.5rem;
       margin-left: 1rem;
+      font-weight: 400;
 
       li {
         background-color: $color-grey-lighter;
