@@ -20,7 +20,6 @@ const OrganTeachers = ({ globalData, teachersData }) => (
   <Layout globalData={globalData}>
     <div className="row">
       <h1>Organ Teachers</h1>
-      {console.log("TD: ", teachersData)}
       <div className={classes.Teachers}>
         {teachersData.map((teacher) => (
           <TeacherCard teacher={teacher} key={teacher.id} />
