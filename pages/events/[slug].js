@@ -55,13 +55,16 @@ const Event = ({ globalData, eventData }) => (
                 </div>
               </div>
             </div>
-            {console.log("ED: ", eventData)}
           </div>
           <div className={classes.Event__Location}>
             <div>{eventData.Location}</div>
-            <div>{eventData.Address.addressLineOne}</div>
-            <div>{eventData.Address.addressLineTwo}</div>
-            <div>{`${eventData.Address.City} ${eventData.Address.State}, ${eventData.Address.Zip}`}</div>
+            {eventData.Address ? (
+              <>
+                <div>{eventData.Address.addressLineOne}</div>
+                <div>{eventData.Address.addressLineTwo}</div>
+                <div>{`${eventData.Address.City} ${eventData.Address.State}, ${eventData.Address.Zip}`}</div>
+              </>
+            ) : null}
           </div>
 
           <div

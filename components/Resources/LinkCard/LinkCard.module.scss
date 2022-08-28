@@ -12,6 +12,8 @@
   &__Image {
     position: relative;
     height: 20rem;
+    border-radius: .3rem;
+    overflow: hidden;
     // aspect-ratio: 16/9;
   }
 
