@@ -4,7 +4,7 @@ import classes from "./LinkCard.module.scss";
 
 const LinkCard = ({ link }) => (
   <div className={classes.LinkCard} key={link.id}>
-    <a href={link.url} target="_blank" noreferrer>
+    <a href={link.url} target="_blank" rel="noreferrer">
       <div className={classes.LinkCard__Image}>
         <Image
           src={link.Image.data.attributes.url}
