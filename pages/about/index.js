@@ -4,6 +4,8 @@ import BoardMember from "../../components/About/BoardMember/BoardMember";
 import { getGlobalData } from "../../lib/api";
 import { getBoardData, getAboutData } from "../../lib/about";
 
+import Fade from "react-reveal";
+
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
@@ -64,6 +66,7 @@ const About = ({ globalData, boardData, aboutData }) => (
         </div>
         <div className={classes.About__Values__Text}>
           <h2>Our Values</h2>
+          <Fade bottom cascade>
           <div className={classes.About__Values__Text__Group}>
             {aboutData.Values.map((value) => {
               let icon = null;
@@ -94,6 +97,7 @@ const About = ({ globalData, boardData, aboutData }) => (
               );
             })}
           </div>
+          </Fade>
         </div>
       </section>
 
