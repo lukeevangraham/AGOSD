@@ -84,7 +84,7 @@
         padding: 1rem 2rem;
         width: fit-content;
         border-radius: 10rem;
-        transition: all .2s;
+        transition: all 0.2s;
 
         &:nth-child(2) {
           &:hover {
@@ -119,13 +119,18 @@
       position: relative;
       height: 30rem;
     }
-
-    &_image {
-      position: relative;
-      // height: 20rem;
-      height: 30rem;
-      width: 100%;
-      margin: 2rem 0;
-    }
   }
+
+  // &__Images {
+  //   background-color: $color-grey-light;
+  //   border-radius: 1rem;
+  //   padding: 3rem;
+
+  //   &__Image {
+  //     position: relative;
+  //     height: 40rem;
+  //     width: 100%;
+  //     margin: 2rem auto;
+  //   }
+  // }
 }

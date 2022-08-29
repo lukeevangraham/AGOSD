@@ -4,6 +4,8 @@ import Layout from "../../components/Layout/Layout";
 import { getGlobalData } from "../../lib/api";
 import { getEducationData } from "../../lib/education";
 
+import Fade from "react-reveal";
+
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
@@ -115,21 +117,25 @@ const Education = ({ globalData, educationData }) => {
 
       <div className="row">
         <section className={classes.Certifications}>
-          <div className={classes.Certifications__Image}>
-            <Image
-              src={educationData.CertificationImage.data.attributes.url}
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-          <div>
-            <h2>Certifications</h2>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: educationData.CertificationsContent,
-              }}
-            />
-          </div>
+          <Fade left>
+            <div className={classes.Certifications__Image}>
+              <Image
+                src={educationData.CertificationImage.data.attributes.url}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </Fade>
+          <Fade bottom>
+            <div>
+              <h2>Certifications</h2>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: educationData.CertificationsContent,
+                }}
+              />
+            </div>
+          </Fade>
         </section>
       </div>
     </Layout>

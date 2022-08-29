@@ -109,15 +109,14 @@ const About = ({ globalData, boardData, aboutData }) => (
         <section>
           <div className={classes.About__Board}>
             <h2>Our Board</h2>
-            <Fade bottom cascade>
-              <div className={classes.About__Board__BoardMembers}>
-                {boardData.map((member) => (
-                  <div key={member.id}>
-                    <BoardMember member={member} key={member.id} />
-                  </div>
-                ))}
-              </div>
-            </Fade>
+
+            <div className={classes.About__Board__BoardMembers}>
+              {boardData.map((member) => (
+                <div key={member.id}>
+                  <BoardMember member={member} key={member.id} />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </div>

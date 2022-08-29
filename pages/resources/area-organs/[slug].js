@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getGlobalData } from "../../../lib/api";
 import { getAllOrganSiteSlugs, getOrganData } from "../../../lib/resources";
 import Layout from "../../../components/Layout/Layout";
+import PhotoShowcase from "../../../components/UI/PhotoShowcase/PhotoShowcase";
 
 import classes from "./slug.module.scss";
 
@@ -27,8 +28,8 @@ export async function getStaticProps({ params }) {
 
 const Organ = ({ globalData, organData }) => (
   <Layout globalData={globalData}>
-    <div className="row">
-      <div className={classes.Organ}>
+    <div className={classes.Organ}>
+      <div className="row">
         <div className={classes.Organ__Header}>
           <div className={classes.Organ__Header__Text}>
             <h1>{organData.Name}</h1>
@@ -76,72 +77,85 @@ const Organ = ({ globalData, organData }) => (
           </div>
           {console.log("OD", organData)}
         </div>
-        {organData.area_organs.data.map((organ) => (
-          <div key={organ.id} className={classes.Organ__InstrumentDetail}>
-            <h2 className={classes.Organ__InstrumentDetail__Location}>
-              {organ.attributes.Location ? organ.attributes.Location : null}
-            </h2>
-            <div
-              className={classes.Organ__InstrumentDetail__Description}
-              dangerouslySetInnerHTML={{ __html: organ.attributes.Description }}
-            />
-            <div className={classes.Organ__InstrumentDetail__FinerPoints}>
+      </div>
+      {organData.area_organs.data.map((organ) => (
+        <div key={organ.id} style={{ marginTop: "7.5rem" }}>
+          <div className="row">
+            <div key={organ.id} className={classes.Organ__InstrumentDetail}>
+              <h2 className={classes.Organ__InstrumentDetail__Location}>
+                {organ.attributes.Location ? organ.attributes.Location : null}
+              </h2>
               <div
-                className={
-                  classes.Organ__InstrumentDetail__FinerPoints__MakeAndModel
-                }
-              >
-                <svg>
-                  <use xlinkHref="../../images/sprite.svg#icon-cogs"></use>
-                </svg>
-                <div>{organ.attributes.makeAndmodel}</div>
-              </div>
-              <div
-                className={classes.Organ__InstrumentDetail__FinerPoints__Specs}
-              >
-                <a
-                  href={organ.attributes.Specs.data.attributes.url}
-                  target="_blank"
-                  rel="noreferrer"
+                className={classes.Organ__InstrumentDetail__Description}
+                dangerouslySetInnerHTML={{
+                  __html: organ.attributes.Description,
+                }}
+              />
+              <div className={classes.Organ__InstrumentDetail__FinerPoints}>
+                <div
+                  className={
+                    classes.Organ__InstrumentDetail__FinerPoints__MakeAndModel
+                  }
                 >
                   <svg>
-                    <use xlinkHref="../../images/sprite.svg#icon-file-pdf"></use>
+                    <use xlinkHref="../../images/sprite.svg#icon-cogs"></use>
                   </svg>
-                  Organ Specs
-                </a>
+                  <div>{organ.attributes.makeAndmodel}</div>
+                </div>
+                <div
+                  className={
+                    classes.Organ__InstrumentDetail__FinerPoints__Specs
+                  }
+                >
+                  <a
+                    href={organ.attributes.Specs.data.attributes.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <svg>
+                      <use xlinkHref="../../images/sprite.svg#icon-file-pdf"></use>
+                    </svg>
+                    Organ Specs
+                  </a>
+                </div>
               </div>
+              {/* <div className={classes.Organ__InstrumentDetail_topImage}>
+                <Image
+                  src={organ.attributes.Images.data[0].attributes.url}
+                  alt={
+                    organ.attributes.Images.data[0].attributes.alternativeText
+                  }
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div> */}
             </div>
-            <div className={classes.Organ__InstrumentDetail_topImage}>
-              <Image
-                src={organ.attributes.Images.data[0].attributes.url}
-                alt={organ.attributes.Images.data[0].attributes.alternativeText}
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
+          </div>
 
-            {organ.attributes.Images.data.length > 1
-              ? organ.attributes.Images.data
-                  .filter((organ, index) => index > 0)
-                  .map((image) => (
+          <PhotoShowcase data={organ.attributes.Images.data} />
+
+          {/* <div className={classes.Organ__Images}>
+              {organ.attributes.Images.data.length > 1
+                ? organ.attributes.Images.data.map((image) => (
                     <div
                       key={image.id}
-                      className={classes.Organ__InstrumentDetail_image}
+                      className={classes.Organ__Images__Image}
                     >
                       <Image
                         src={image.attributes.url}
                         alt={image.attributes.alternativeText}
                         layout="fill"
                         objectFit="contain"
-                        objectPosition={"left"}
+                        objectPosition={"center"}
                       />
                     </div>
                   ))
-              : null}
-          </div>
-        ))}
-      </div>
+                : null}
+            </div> */}
+        </div>
+      ))}
     </div>
+    {/* </div> */}
   </Layout>
 );
 
