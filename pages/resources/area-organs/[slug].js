@@ -29,38 +29,88 @@ const Organ = ({ globalData, organData }) => (
   <Layout globalData={globalData}>
     <div className="row">
       <div className={classes.Organ}>
-        <div className={classes.Organ__Site}>
-          <div>{organData.Name}</div>
-          {organData.Address.addressLineOne ? (
-            <div>{organData.Address.addressLineOne}</div>
-          ) : null}
-          {organData.Address.addressLineTwo ? (
-            <div>{organData.Address.addressLineTwo}</div>
-          ) : null}
-          <div>
-            {organData.Address.City ? organData.Address.City : null}
-            {", "}
-            {organData.Address.State ? organData.Address.State : null}{" "}
-            {organData.Address.Zip ? organData.Address.Zip : null}
+        <div className={classes.Organ__Header}>
+          <div className={classes.Organ__Header__Text}>
+            <h1>{organData.Name}</h1>
+            <div className={classes.Organ__Header__Site}>
+              {/* <div>{organData.Name}</div> */}
+              {organData.Address.addressLineOne ? (
+                <div>{organData.Address.addressLineOne}</div>
+              ) : null}
+              {organData.Address.addressLineTwo ? (
+                <div>{organData.Address.addressLineTwo}</div>
+              ) : null}
+              <div>
+                {organData.Address.City ? organData.Address.City : null}
+                {", "}
+                {organData.Address.State ? organData.Address.State : null}{" "}
+                {organData.Address.Zip ? organData.Address.Zip : null}
+              </div>
+              {organData.Phone ? <div>{organData.Phone}</div> : null}
+              {organData.Website ? (
+                <div className={classes.Organ__Header__Site_link}>
+                  <a href={organData.Website}>{organData.Website}</a>
+                </div>
+              ) : null}
+            </div>
           </div>
-          {organData.Phone ? <div>{organData.Phone}</div> : null}
-          {organData.Website ? (
-            <a href={organData.Website}>{organData.Website}</a>
-          ) : null}
+          <div className={classes.Organ__Header__Image}>
+            <Image
+              src={
+                organData.area_organs.data[0].attributes.PrimaryImage.data
+                  ? organData.area_organs.data[0].attributes.PrimaryImage.data
+                      .attributes.url
+                  : organData.area_organs.data[0].attributes.Images.data[0]
+                      .attributes.url
+              }
+              alt={
+                organData.area_organs.data[0].attributes.PrimaryImage.data
+                  ? organData.area_organs.data[0].attributes.PrimaryImage.data
+                      .attributes.alternativeText
+                  : organData.area_organs.data[0].attributes.Images.data[0]
+                      .attributes.alternativeText
+              }
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+          {console.log("OD", organData)}
         </div>
         {organData.area_organs.data.map((organ) => (
           <div key={organ.id} className={classes.Organ__InstrumentDetail}>
-            <div>
+            <h2 className={classes.Organ__InstrumentDetail__Location}>
               {organ.attributes.Location ? organ.attributes.Location : null}
+            </h2>
+            <div
+              className={classes.Organ__InstrumentDetail__Description}
+              dangerouslySetInnerHTML={{ __html: organ.attributes.Description }}
+            />
+            <div className={classes.Organ__InstrumentDetail__FinerPoints}>
+              <div
+                className={
+                  classes.Organ__InstrumentDetail__FinerPoints__MakeAndModel
+                }
+              >
+                <svg>
+                  <use xlinkHref="../../images/sprite.svg#icon-cogs"></use>
+                </svg>
+                <div>{organ.attributes.makeAndmodel}</div>
+              </div>
+              <div
+                className={classes.Organ__InstrumentDetail__FinerPoints__Specs}
+              >
+                <a
+                  href={organ.attributes.Specs.data.attributes.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg>
+                    <use xlinkHref="../../images/sprite.svg#icon-file-pdf"></use>
+                  </svg>
+                  Organ Specs
+                </a>
+              </div>
             </div>
-            <div>{organ.attributes.makeAndmodel}</div>
-            <a
-              href={organ.attributes.Specs.data.attributes.url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Organ Specs
-            </a>
             <div className={classes.Organ__InstrumentDetail_topImage}>
               <Image
                 src={organ.attributes.Images.data[0].attributes.url}
@@ -69,9 +119,7 @@ const Organ = ({ globalData, organData }) => (
                 objectFit="contain"
               />
             </div>
-            <div
-              dangerouslySetInnerHTML={{ __html: organ.attributes.Description }}
-            />
+
             {organ.attributes.Images.data.length > 1
               ? organ.attributes.Images.data
                   .filter((organ, index) => index > 0)
