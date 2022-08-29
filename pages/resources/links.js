@@ -4,6 +4,8 @@ import LinkCard from "../../components/Resources/LinkCard/LinkCard";
 import { getGlobalData } from "../../lib/api";
 import { getLinkData } from "../../lib/resources";
 
+import Fade from "react-reveal";
+
 import classes from "./links.module.scss";
 
 export async function getStaticProps() {
@@ -56,11 +58,13 @@ const Links = ({ globalData, linkData }) => {
                 (link) => link.Category === "Partner Organizations"
               )
             )} */}
-            <div className={classes.Grid}>
-              {linkData.map((link) => (
-                <LinkCard link={link} key={link.id} />
-              ))}
-            </div>
+            <Fade bottom>
+              <div className={classes.Grid}>
+                {linkData.map((link) => (
+                  <LinkCard link={link} key={link.id} />
+                ))}
+              </div>
+            </Fade>
           </div>
         </div>
       </div>

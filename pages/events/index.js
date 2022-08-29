@@ -25,8 +25,18 @@ const Events = ({ globalData, eventsData }) => {
   let renderEvents = filter
     ? eventsData
         .filter((event) => event.attributes.EventType[filter])
-        .map((event) => <EventCard key={event.id} event={event} />)
-    : eventsData.map((event) => <EventCard key={event.id} event={event} />);
+        .map((event) => (
+          <div>
+            {" "}
+            <EventCard key={event.id} event={event} />
+          </div>
+        ))
+    : eventsData.map((event) => (
+        <div>
+          {" "}
+          <EventCard key={event.id} event={event} />
+        </div>
+      ));
 
   return (
     <Layout globalData={globalData}>

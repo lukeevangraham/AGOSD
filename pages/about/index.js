@@ -26,33 +26,37 @@ const About = ({ globalData, boardData, aboutData }) => (
       <div className="row">
         <h1 className="heading-primary">About Our Chapter</h1>
         <div className={classes.About__TopInfo}>
-          <div>
-            <h2 className="heading-secondary">
-              Supporting organists, choir directors and future organists
-            </h2>
-            <p>
-              The San Diego Chapter of the American Guild of Organists takes
-              great pride in its history and seeks innovative ideas to be a
-              leader in promoting the organ, organ and choral music, as well as
-              providing mutual support for organists and choral directors and
-              nurturing future organists. Chartered on March 6, 1922 after being
-              established as a &quot;sub-chapter&quot; in 1917, it is part of an
-              international professional association serving over 19,000 members
-              throughout the United States, Europe, Singapore, Korea, Taiwan and
-              Sydney, Australia. The chapter hosted regional conventions in
-              1969, 2001, and 2015 and Pipe Organ Encounters in 1997, 2003,
-              2006, 2009, 2012, and 2017. We are proud of the large number of
-              young organ students who are being trained to become future
-              organists by several of our chapter members.
-            </p>
-          </div>
-          <div className={classes.About__TopInfo_Image}>
-            <Image
-              src={aboutData.topImage.data.attributes.url}
-              objectFit="cover"
-              layout="fill"
-            />
-          </div>
+          <Fade left>
+            <div>
+              <h2 className="heading-secondary">
+                Supporting organists, choir directors and future organists
+              </h2>
+              <p>
+                The San Diego Chapter of the American Guild of Organists takes
+                great pride in its history and seeks innovative ideas to be a
+                leader in promoting the organ, organ and choral music, as well
+                as providing mutual support for organists and choral directors
+                and nurturing future organists. Chartered on March 6, 1922 after
+                being established as a &quot;sub-chapter&quot; in 1917, it is
+                part of an international professional association serving over
+                19,000 members throughout the United States, Europe, Singapore,
+                Korea, Taiwan and Sydney, Australia. The chapter hosted regional
+                conventions in 1969, 2001, and 2015 and Pipe Organ Encounters in
+                1997, 2003, 2006, 2009, 2012, and 2017. We are proud of the
+                large number of young organ students who are being trained to
+                become future organists by several of our chapter members.
+              </p>
+            </div>
+          </Fade>
+          <Fade right>
+            <div className={classes.About__TopInfo_Image}>
+              <Image
+                src={aboutData.topImage.data.attributes.url}
+                objectFit="cover"
+                layout="fill"
+              />
+            </div>
+          </Fade>
         </div>
       </div>
 
@@ -67,36 +71,36 @@ const About = ({ globalData, boardData, aboutData }) => (
         <div className={classes.About__Values__Text}>
           <h2>Our Values</h2>
           <Fade bottom cascade>
-          <div className={classes.About__Values__Text__Group}>
-            {aboutData.Values.map((value) => {
-              let icon = null;
+            <div className={classes.About__Values__Text__Group}>
+              {aboutData.Values.map((value) => {
+                let icon = null;
 
-              if (value.Value === "Education") {
-                icon = `../images/sprite.svg#icon-education`;
-              }
-              if (value.Value === "Community") {
-                icon = `../images/sprite.svg#icon-user-group`;
-              }
-              if (value.Value === "Inclusiveness") {
-                icon = `../images/sprite.svg#icon-user-plus`;
-              }
-              if (value.Value === "Diversity") {
-                icon = `../images/sprite.svg#icon-earth`;
-              }
+                if (value.Value === "Education") {
+                  icon = `../images/sprite.svg#icon-education`;
+                }
+                if (value.Value === "Community") {
+                  icon = `../images/sprite.svg#icon-user-group`;
+                }
+                if (value.Value === "Inclusiveness") {
+                  icon = `../images/sprite.svg#icon-user-plus`;
+                }
+                if (value.Value === "Diversity") {
+                  icon = `../images/sprite.svg#icon-earth`;
+                }
 
-              return (
-                <div key={value.id}>
-                  <svg>
-                    <use xlinkHref={icon}></use>
-                  </svg>
-                  <div className={classes.About__Values__Text__Group_value}>
-                    {value.Value}
+                return (
+                  <div key={value.id}>
+                    <svg>
+                      <use xlinkHref={icon}></use>
+                    </svg>
+                    <div className={classes.About__Values__Text__Group_value}>
+                      {value.Value}
+                    </div>
+                    <div>{value.Description}</div>
                   </div>
-                  <div>{value.Description}</div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
           </Fade>
         </div>
       </section>
@@ -105,11 +109,15 @@ const About = ({ globalData, boardData, aboutData }) => (
         <section>
           <div className={classes.About__Board}>
             <h2>Our Board</h2>
-            <div className={classes.About__Board__BoardMembers}>
-              {boardData.map((member) => (
-                <BoardMember member={member} key={member.id} />
-              ))}
-            </div>
+            <Fade bottom cascade>
+              <div className={classes.About__Board__BoardMembers}>
+                {boardData.map((member) => (
+                  <div>
+                    <BoardMember member={member} key={member.id} />
+                  </div>
+                ))}
+              </div>
+            </Fade>
           </div>
         </section>
       </div>

@@ -32,9 +32,9 @@
     position: relative;
     background-color: $color-black;
 
-h2  {
-  color: $color-white;
-}
+    h2 {
+      color: $color-white;
+    }
 
     &__BGImage {
       position: absolute;
@@ -116,6 +116,8 @@ h2  {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
       gap: 3rem;
+      // display: flex;
+      // flex-wrap: wrap;
     }
   }
 }
