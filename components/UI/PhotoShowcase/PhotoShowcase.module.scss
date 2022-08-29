@@ -1,8 +1,8 @@
 @import "../../../styles/abstracts/variables";
 
 .PhotoShowcase {
-  // margin: 3rem auto;
   background-color: $color-grey-dark;
+
   &__Group {
     list-style: none;
     width: 100%;
@@ -14,6 +14,7 @@
 
     & li {
       display: block;
+      cursor: pointer;
       // width: 25%;
     }
     &_Photo {
