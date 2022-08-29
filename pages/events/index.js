@@ -32,7 +32,7 @@ const Events = ({ globalData, eventsData }) => {
           </div>
         ))
     : eventsData.map((event) => (
-        <div>
+        <div key={event.id}>
           {" "}
           <EventCard key={event.id} event={event} />
         </div>
