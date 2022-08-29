@@ -5,6 +5,8 @@
   gap: 4rem;
   flex-direction: row-reverse;
   align-items: center;
+  // margin-bottom: 10rem;
+  // background-color: orangered;
 
   &__Image {
     position: relative;
@@ -25,4 +27,5 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   gap: 2rem;
+  margin-bottom: 10rem;
 }
