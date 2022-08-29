@@ -26,7 +26,7 @@ const Events = ({ globalData, eventsData }) => {
     ? eventsData
         .filter((event) => event.attributes.EventType[filter])
         .map((event) => (
-          <div>
+          <div key={event.id}>
             {" "}
             <EventCard key={event.id} event={event} />
           </div>
