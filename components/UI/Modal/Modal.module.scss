@@ -26,6 +26,7 @@
     opacity: .6;
     cursor: pointer;
     transition: all .2s;
+    z-index: 9;
 
     &:hover {
       background-color: $color-grey;

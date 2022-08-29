@@ -2,6 +2,7 @@
 @import "../../../styles/abstracts/mixins";
 
 .Organ {
+  margin-bottom: -90px;
   &__Header {
     display: grid;
     grid-template-columns: 4fr 6fr;
