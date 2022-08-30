@@ -47,8 +47,42 @@ const PhotoShowcase = ({ data }) => {
                 style={{ width: "50%" }}
                 onClick={() => setShowModal(photo)}
               >
-                {console.log("HERE: ", (array.length + 1) % 2)}
-                <figure className={classes.PhotoShowcase__Group_Photo}>
+                <figure className={`${classes.PhotoShowcase__Group_Photo} ${classes.Rectangle}`}>
+                  <Image
+                    src={photo.attributes.url}
+                    alt={photo.attributes.alternativeText}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </figure>
+              </li>
+            );
+          } if (array.length === 3) {
+            return (
+              <li
+                key={photo.id}
+                style={{ width: "33%" }}
+                onClick={() => setShowModal(photo)}
+              >
+                <figure className={`${classes.PhotoShowcase__Group_Photo}`}>
+                  <Image
+                    src={photo.attributes.url}
+                    alt={photo.attributes.alternativeText}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </figure>
+              </li>
+            );
+            
+          } if (array.length === 4) {
+            return (
+              <li
+                key={photo.id}
+                style={{ width: "25%" }}
+                onClick={() => setShowModal(photo)}
+              >
+                <figure className={`${classes.PhotoShowcase__Group_Photo}`}>
                   <Image
                     src={photo.attributes.url}
                     alt={photo.attributes.alternativeText}
