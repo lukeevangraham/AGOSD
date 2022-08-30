@@ -2,6 +2,8 @@ import Image from "next/image";
 import { getGlobalData } from "../../../lib/api";
 import { getAllOrganSiteSlugs, getOrganData } from "../../../lib/resources";
 import Layout from "../../../components/Layout/Layout";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import PhotoShowcase from "../../../components/UI/PhotoShowcase/PhotoShowcase";
 
 import classes from "./slug.module.scss";
@@ -131,6 +133,7 @@ const Organ = ({ globalData, organData }) => (
               </div> */}
             </div>
           </div>
+
 
           <PhotoShowcase data={organ.attributes.Images.data} />
 

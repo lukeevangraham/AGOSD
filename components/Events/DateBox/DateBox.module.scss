@@ -1,7 +1,7 @@
 @import "../../../styles/abstracts/variables";
 
 .DateBox {
-  background-color: $color-primary-light;
+  background-color: rgba($color-primary-light, 1);
   // position: absolute;
   padding: 1rem;
   //   text-align: center;

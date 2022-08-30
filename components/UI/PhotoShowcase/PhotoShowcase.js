@@ -8,7 +8,7 @@ const PhotoShowcase = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <section className={classes.PhotoShowcase}>
+    <div className={classes.PhotoShowcase}>
       {showModal ? (
         <Modal show={showModal} modalClosed={() => setShowModal(false)}>
           <div className={classes.ModalImage}>
@@ -47,7 +47,9 @@ const PhotoShowcase = ({ data }) => {
                 style={{ width: "50%" }}
                 onClick={() => setShowModal(photo)}
               >
-                <figure className={`${classes.PhotoShowcase__Group_Photo} ${classes.Rectangle}`}>
+                <figure
+                  className={`${classes.PhotoShowcase__Group_Photo} ${classes.Rectangle}`}
+                >
                   <Image
                     src={photo.attributes.url}
                     alt={photo.attributes.alternativeText}
@@ -57,7 +59,8 @@ const PhotoShowcase = ({ data }) => {
                 </figure>
               </li>
             );
-          } if (array.length === 3) {
+          }
+          if (array.length === 3) {
             return (
               <li
                 key={photo.id}
@@ -74,8 +77,8 @@ const PhotoShowcase = ({ data }) => {
                 </figure>
               </li>
             );
-            
-          } if (array.length === 4) {
+          }
+          if (array.length === 4) {
             return (
               <li
                 key={photo.id}
@@ -138,7 +141,7 @@ const PhotoShowcase = ({ data }) => {
           }
         })}
       </ul>
-    </section>
+    </div>
   );
 };
 

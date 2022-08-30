@@ -9,7 +9,6 @@ const EventCard = ({ event }) => {
 
   return (
     <div className={classes.EventCard}>
-      {/* {console.log("E: ", event)} */}
       <Link href={`/events/${event.attributes.Slug}`}>
         <a>
           <div className={classes.EventCard__Image}>
@@ -67,38 +66,24 @@ const EventCard = ({ event }) => {
     >
       {event.attributes.Type}
     </div> */}
-    <div className={classes.EventCard__Type}>
-
-    
-      {event.attributes.EventType && event.attributes.EventType.AGOChapter ? (
-        <div
-          className={classNames(
-            classes.EventCard__Type_chapter
-          )}
-        >
-          AGO Chapter
-        </div>
-      ) : null}
-      {event.attributes.EventType &&
-      event.attributes.EventType.CommunitySponsored ? (
-        <div
-          className={classNames(
-            classes.EventCard__Type_community
-          )}
-        >
-          Community Sponsored
-        </div>
-      ) : null}
-      {event.attributes.EventType && event.attributes.EventType.Student ? (
-        <div
-          className={classNames(
-            classes.EventCard__Type_student
-          )}
-        >
-          Student
-        </div>
-      ) : null}
-    </div>
+      <div className={classes.EventCard__Type}>
+        {event.attributes.EventType && event.attributes.EventType.AGOChapter ? (
+          <div className={classNames(classes.EventCard__Type_chapter)}>
+            AGO Chapter
+          </div>
+        ) : null}
+        {event.attributes.EventType &&
+        event.attributes.EventType.CommunitySponsored ? (
+          <div className={classNames(classes.EventCard__Type_community)}>
+            Community Sponsored
+          </div>
+        ) : null}
+        {event.attributes.EventType && event.attributes.EventType.Student ? (
+          <div className={classNames(classes.EventCard__Type_student)}>
+            Student
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 };
