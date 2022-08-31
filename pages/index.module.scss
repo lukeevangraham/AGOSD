@@ -137,4 +137,33 @@
       // justify-content: space-evenly;
     }
   }
+
+  &__FeaturedOrgan {
+    &__Card {
+      cursor: pointer;
+      background-color: $color-secondary-lighter;
+      margin-top: 4rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      height: 30rem;
+      display: flex;
+      gap: 3rem;
+
+      &__Image {
+        justify-self: flex-end;
+        position: relative;
+        height: 100%;
+        width: 60%;
+      }
+
+      &__Info {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        text-align: right;
+      }
+    }
+  }
 }

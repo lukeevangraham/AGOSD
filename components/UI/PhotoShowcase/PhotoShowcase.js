@@ -104,7 +104,6 @@ const PhotoShowcase = ({ data }) => {
                     style={{ width: `${100 / (array.length / 2)}%` }}
                     onClick={() => setShowModal(photo)}
                   >
-                    {console.log("HERE: ", (array.length + 1) % 2)}
                     <figure className={classes.PhotoShowcase__Group_Photo}>
                       <Image
                         src={photo.attributes.url}

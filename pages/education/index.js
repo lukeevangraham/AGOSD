@@ -24,7 +24,6 @@ const Education = ({ globalData, educationData }) => {
     <Layout globalData={globalData}>
       <div className="row">
         <h1>Education</h1>
-        {console.log("HERE: ", educationData)}
         <section className={classes.Welcome}>
           <div
             dangerouslySetInnerHTML={{ __html: educationData.topText }}

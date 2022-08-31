@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getGlobalData } from "../../../lib/api";
 import { getAllOrganSiteSlugs, getOrganData } from "../../../lib/resources";
 import Layout from "../../../components/Layout/Layout";
+import OrganHeader from "../../../components/Resources/OrganHeader/OrganHeader";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import PhotoShowcase from "../../../components/UI/PhotoShowcase/PhotoShowcase";
@@ -31,54 +32,9 @@ export async function getStaticProps({ params }) {
 const Organ = ({ globalData, organData }) => (
   <Layout globalData={globalData}>
     <div className={classes.Organ}>
+      {console.log("OD [slug]", organData)}
       <div className="row">
-        <div className={classes.Organ__Header}>
-          <div className={classes.Organ__Header__Text}>
-            <h1>{organData.Name}</h1>
-            <div className={classes.Organ__Header__Site}>
-              {/* <div>{organData.Name}</div> */}
-              {organData.Address.addressLineOne ? (
-                <div>{organData.Address.addressLineOne}</div>
-              ) : null}
-              {organData.Address.addressLineTwo ? (
-                <div>{organData.Address.addressLineTwo}</div>
-              ) : null}
-              <div>
-                {organData.Address.City ? organData.Address.City : null}
-                {", "}
-                {organData.Address.State ? organData.Address.State : null}{" "}
-                {organData.Address.Zip ? organData.Address.Zip : null}
-              </div>
-              {organData.Phone ? <div>{organData.Phone}</div> : null}
-              {organData.Website ? (
-                <div className={classes.Organ__Header__Site_link}>
-                  <a href={organData.Website}>{organData.Website}</a>
-                </div>
-              ) : null}
-            </div>
-          </div>
-          <div className={classes.Organ__Header__Image}>
-            <Image
-              src={
-                organData.area_organs.data[0].attributes.PrimaryImage.data
-                  ? organData.area_organs.data[0].attributes.PrimaryImage.data
-                      .attributes.url
-                  : organData.area_organs.data[0].attributes.Images.data[0]
-                      .attributes.url
-              }
-              alt={
-                organData.area_organs.data[0].attributes.PrimaryImage.data
-                  ? organData.area_organs.data[0].attributes.PrimaryImage.data
-                      .attributes.alternativeText
-                  : organData.area_organs.data[0].attributes.Images.data[0]
-                      .attributes.alternativeText
-              }
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-          {console.log("OD", organData)}
-        </div>
+        <OrganHeader organData={organData} />
       </div>
       {organData.area_organs.data.map((organ) => (
         <div key={organ.id} style={{ marginTop: "7.5rem" }}>
@@ -133,7 +89,6 @@ const Organ = ({ globalData, organData }) => (
               </div> */}
             </div>
           </div>
-
 
           <PhotoShowcase data={organ.attributes.Images.data} />
 
