@@ -4,6 +4,7 @@ import "@fontsource/lato/300.css";
 import "@fontsource/lato/400.css";
 import "@fontsource/lato/700.css";
 import "@fontsource/lato/900.css";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 // import {
 //   PayPalScriptProvider,
 //   PayPalHostedFieldsProvider,
@@ -165,7 +166,11 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Component {...pageProps} />
+      <PayPalScriptProvider
+        options={{ "client-id": process.env.NEXT_PUBLIC_CLIENT_ID }}
+      >
+        <Component {...pageProps} />
+      </PayPalScriptProvider>
     </>
   );
 }
