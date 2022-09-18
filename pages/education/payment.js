@@ -35,7 +35,7 @@ const Payment = ({ globalData }) => {
           </i>
         </p>
       </div>
-      <div className="row">
+      <div className="row u-padding-top-medium">
         <PaypalCheckoutButton product={product} />
       </div>
     </Layout>
