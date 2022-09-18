@@ -29,7 +29,7 @@ const Payment = ({ globalData }) => {
           <i>
             {" "}
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfI2mR8fyz2QlnpffvEWTZi5KDo0EGefFeieEQ4x8bkYhVt1w/viewform">
-              If you haven't completed the application yet, please start the
+              If you haven&apos;t completed the application yet, please start the
               process here.{" "}
             </a>
           </i>
