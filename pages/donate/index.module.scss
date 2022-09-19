@@ -1,5 +1,13 @@
 @import "../../styles/abstracts/variables";
 
+.Donate {
+  &__FormAndFunds {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+    gap: 3rem;
+  }
+}
+
 .Black {
   background-color: $color-black;
 }
@@ -11,42 +19,42 @@
   }
   &__light {
     background-color: $color-grey-light;
-}
-&__lighter {
-      background-color: $color-grey-lighter;
+  }
+  &__lighter {
+    background-color: $color-grey-lighter;
   }
 }
 
 .Primary {
-    background-color: $color-primary;
-    &__darker {
-        background-color: $color-primary-darker;
-      }
-    &__dark {
-        background-color: $color-primary-dark;
-      }
-      &__light {
-        background-color: $color-primary-light;
-    }
-    &__lighter {
-          background-color: $color-primary-lighter;
-      }
+  background-color: $color-primary;
+  &__darker {
+    background-color: $color-primary-darker;
+  }
+  &__dark {
+    background-color: $color-primary-dark;
+  }
+  &__light {
+    background-color: $color-primary-light;
+  }
+  &__lighter {
+    background-color: $color-primary-lighter;
+  }
 }
 
 .Secondary {
-    background-color: $color-secondary;
-    &__darker {
-        background-color: $color-secondary-darker;
-      }
-    &__dark {
-        background-color: $color-secondary-dark;
-      }
-      &__light {
-        background-color: $color-secondary-light;
-    }
-    &__lighter {
-          background-color: $color-secondary-lighter;
-      }
+  background-color: $color-secondary;
+  &__darker {
+    background-color: $color-secondary-darker;
+  }
+  &__dark {
+    background-color: $color-secondary-dark;
+  }
+  &__light {
+    background-color: $color-secondary-light;
+  }
+  &__lighter {
+    background-color: $color-secondary-lighter;
+  }
 }
 
 .Box {
