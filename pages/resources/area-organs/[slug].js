@@ -32,7 +32,6 @@ export async function getStaticProps({ params }) {
 const Organ = ({ globalData, organData }) => (
   <Layout globalData={globalData}>
     <div className={classes.Organ}>
-      {console.log("OD [slug]", organData)}
       <div className="row">
         <OrganHeader organData={organData} />
       </div>
