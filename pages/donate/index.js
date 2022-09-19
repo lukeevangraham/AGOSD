@@ -23,12 +23,11 @@ export async function getStaticProps() {
 const Donate = ({ globalData, donateData }) => {
   return (
     <>
-      <Head>
-        <Script
-          src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"
-          charset="UTF-8"
-        ></Script>
-      </Head>
+      <Script
+        src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"
+        charset="UTF-8"
+      ></Script>
+
       <Layout globalData={globalData}>
         <div className="row">
           <h1>Donate</h1>
