@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   const paths = await getAllOrganSiteSlugs();
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
