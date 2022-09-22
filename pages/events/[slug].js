@@ -3,6 +3,7 @@ import DateBox from "../../components/Events/DateBox/DateBox";
 import Layout from "../../components/Layout/Layout";
 import { getGlobalData } from "../../lib/api";
 import { getAllEventSlugs, getEventData } from "../../lib/events";
+import { useRouter } from "next/router"
 
 import classes from "./Slug.module.scss";
 
@@ -10,7 +11,7 @@ export async function getStaticPaths() {
   const paths = await getAllEventSlugs();
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -26,7 +27,15 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const Event = ({ globalData, eventData }) => (
+const Event = ({ globalData, eventData }) => { 
+  const router = useRouter()
+
+  if (router.isFallback) {
+    return <div>Loading...</div>
+  }
+
+
+  return (
   <Layout globalData={globalData}>
     <div className="row">
       <div className={classes.Event}>
@@ -74,6 +83,6 @@ const Event = ({ globalData, eventData }) => (
       </div>
     </div>
   </Layout>
-);
+)};
 
 export default Event;
