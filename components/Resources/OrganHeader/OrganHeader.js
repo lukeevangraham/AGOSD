@@ -48,7 +48,6 @@ const OrganHeader = ({ organData }) => (
         objectFit="cover"
       />
     </div>
-    {console.log("OD", organData)}
   </div>
 );
 
