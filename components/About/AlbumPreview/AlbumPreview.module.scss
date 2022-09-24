@@ -1,0 +1,11 @@
+.AlbumPreview {
+  //   background-color: orangered;
+
+  &__Image {
+    position: relative;
+    aspect-ratio: 16 / 9;
+  }
+
+  &__Name {
+  }
+}

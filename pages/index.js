@@ -117,7 +117,6 @@ export default function Home({ homeData, globalData, organsData }) {
           {randomOrgan ? (
             <section>
               <div className="row">
-                {console.log("HERE: ", randomOrgan)}
                 <div className={classes.main__FeaturedOrgan}>
                   <h2>Get to know an area organ</h2>
                   <Fade bottom>

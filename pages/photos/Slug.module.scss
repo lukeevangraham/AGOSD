@@ -1,0 +1,29 @@
+.PhotoAlbum {
+  // background-color: orangered;
+
+  h1, h3 {
+    text-align: center;
+  }
+
+  h3 {
+    margin: auto;
+  }
+
+  &__Photos {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+
+    &__Photo {
+      cursor: pointer;
+      position: relative;
+      aspect-ratio: 16 / 9;
+    }
+  }
+}
+
+.ModalImage {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+}

@@ -62,7 +62,7 @@
 
       &__Group {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         text-align: center;
         line-height: 1.5;
         padding-bottom: 1rem;
@@ -74,7 +74,8 @@
 
         & > * {
           position: relative;
-          padding: 0 2rem;
+          padding: 0 3rem;
+          // flex: 0 1;
 
           svg {
             width: 3rem;
@@ -99,11 +100,28 @@
           }
         }
 
-        &_value {
-          margin-bottom: 1rem;
-          font-size: 133%;
+        &__Value {
+          flex-basis: 33%;
+
+          &_value {
+            margin-bottom: 1rem;
+            font-size: 133%;
+          }
         }
       }
+    }
+  }
+
+  &__Photos {
+    h2 {
+      text-align: center;
+    }
+
+    &__Previews {
+      // height: 20rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 3rem;
     }
   }
 

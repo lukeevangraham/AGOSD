@@ -1,26 +1,29 @@
 import Image from "next/image";
 import Layout from "../../components/Layout/Layout";
 import BoardMember from "../../components/About/BoardMember/BoardMember";
+import AlbumPreview from "../../components/About/AlbumPreview/AlbumPreview";
 import { getGlobalData } from "../../lib/api";
 import { getBoardData, getAboutData } from "../../lib/about";
+import { getPhotoAlbums } from "../../lib/photos"
 
 import Fade from "react-reveal";
 
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
-  const [globalData, boardData, aboutData] = await Promise.all([
+  const [globalData, boardData, aboutData, photoAlbums] = await Promise.all([
     getGlobalData(),
     getBoardData(),
     getAboutData(),
+    getPhotoAlbums(1),
   ]);
   return {
-    props: { globalData, boardData, aboutData },
+    props: { globalData, boardData, aboutData, photoAlbums },
     revalidate: 1,
   };
 }
 
-const About = ({ globalData, boardData, aboutData }) => (
+const About = ({ globalData, boardData, aboutData, photoAlbums }) => (
   <Layout globalData={globalData}>
     <div className={classes.About}>
       <div className="row">
@@ -77,11 +80,18 @@ const About = ({ globalData, boardData, aboutData }) => (
                 }
 
                 return (
-                  <div key={value.id}>
+                  <div
+                    key={value.id}
+                    className={classes.About__Values__Text__Group__Value}
+                  >
                     <svg>
                       <use xlinkHref={icon}></use>
                     </svg>
-                    <div className={classes.About__Values__Text__Group_value}>
+                    <div
+                      className={
+                        classes.About__Values__Text__Group__Value_value
+                      }
+                    >
                       {value.Value}
                     </div>
                     <div>{value.Description}</div>
@@ -90,6 +100,19 @@ const About = ({ globalData, boardData, aboutData }) => (
               })}
             </div>
           </Fade>
+        </div>
+      </section>
+
+      <section>
+        <div
+          className={`${classes.About__Photos} u-padding-bottom-medium u-padding-top-medium`}
+        >
+          <h2>Photo Albums</h2>
+          <div className={classes.About__Photos__Previews}>
+            {photoAlbums.data.map((album) => (
+              <AlbumPreview album={album} key={album.id} />
+            ))}
+          </div>
         </div>
       </section>
 

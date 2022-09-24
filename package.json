@@ -18,6 +18,7 @@
     "react": "18.2.0",
     "react-currency-input-field": "^3.6.4",
     "react-dom": "18.2.0",
+    "react-photo-album": "^1.16.1",
     "react-responsive-carousel": "^3.2.23",
     "react-reveal": "^1.2.2",
     "sass": "^1.54.0",
