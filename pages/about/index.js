@@ -28,7 +28,6 @@ const About = ({ globalData, boardData, aboutData }) => (
         <div className={classes.About__TopInfo}>
           <Fade left>
             <div>
-              {console.log("AD: ", aboutData)}
               <h2 className="heading-secondary">
                 {aboutData.headingSecondary}
               </h2>
