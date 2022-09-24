@@ -19,7 +19,6 @@ export async function getStaticProps() {
 const Registration = ({ globalData, registrationData }) => (
   <Layout globalData={globalData}>
     <div className="row">
-      {console.log("RD: ", registrationData)}
       <h1>Registration</h1>
       <div className={classes.Registration}>
         <div className={classes.Registration__Image}>
