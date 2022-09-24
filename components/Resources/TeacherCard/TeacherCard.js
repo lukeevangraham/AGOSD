@@ -11,6 +11,7 @@ const TeacherCard = ({ teacher }) => (
         <Image
           src={teacher.attributes.Image.data.attributes.url}
           layout="fill"
+          objectFit="cover"
         />
       ) : (
         <UserImageBlank />
