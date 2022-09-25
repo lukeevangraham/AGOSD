@@ -17,7 +17,7 @@ const AlbumPreview = ({ album }) => (
         <div className={classes.AlbumPreview__Name}>
           {album.attributes.Name}
         </div>
-        <div>
+        <div className={classes.AlbumPreview__Date}>
           {`${new Date(album.attributes.Date).toLocaleString("default", {
             month: "long",
           })},\u00A0 ${new Date(album.attributes.Date).toLocaleString(

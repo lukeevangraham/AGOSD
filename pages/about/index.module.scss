@@ -117,15 +117,42 @@
       text-align: center;
     }
 
-    &__Previews {
-      // height: 20rem;
+    &__Wrapper {
+      margin: 5rem 2%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-      gap: 3rem;
+      grid-template-columns: 5rem 1fr 5rem;
+      align-items: center;
+
+      &__Button {
+        background-color: $color-grey-light;
+        font-size: 5rem;
+        font-weight: 200;
+        cursor: pointer;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .2s;
+
+        &:hover {
+          background-color: $color-grey;
+        }
+      }
+      &__Previews {
+        // height: 20rem;
+        // padding: 0 1rem;
+        flex: 1 0 60%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 3rem;
+        background-color: $color-grey-light;
+      }
     }
   }
 
   &__Board {
+    background-color: $color-grey-light;
     h2 {
       margin-bottom: 5rem;
       text-align: center;

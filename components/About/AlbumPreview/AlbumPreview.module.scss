@@ -1,5 +1,8 @@
+@import "../../../styles/abstracts/variables";
+
 .AlbumPreview {
   //   background-color: orangered;
+  position: relative;
 
   &__Image {
     position: relative;
@@ -7,5 +10,22 @@
   }
 
   &__Name {
+    position: absolute;
+    right: .5rem;
+    bottom: 3rem;
+    padding: 0.25rem 0.5rem;
+    background-color: rgba($color-secondary-lighter, .75);
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  &__Date {
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
+    background-color: rgba($color-secondary-lighter, .75);
+    padding: 0.25rem 0.5rem;
+    font-size: 1.5rem;
   }
 }
