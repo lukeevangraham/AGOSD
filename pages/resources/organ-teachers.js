@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import Layout from "../../components/Layout/Layout";
 import TeacherCard from "../../components/Resources/TeacherCard/TeacherCard";
 import { getGlobalData } from "../../lib/api";
@@ -17,16 +18,25 @@ export async function getStaticProps() {
 }
 
 const OrganTeachers = ({ globalData, teachersData }) => (
-  <Layout globalData={globalData}>
-    <div className="row">
-      <h1>Organ Teachers</h1>
-      <div className={classes.Teachers}>
-        {teachersData.map((teacher) => (
-          <TeacherCard teacher={teacher} key={teacher.id} />
-        ))}
+  <>
+    <SEO
+      metaData={{
+        metaTitle: "Organ Teachers",
+        metaDescription:
+          "Organ teachers who teach in the San Diego California region.",
+      }}
+    />
+    <Layout globalData={globalData}>
+      <div className="row">
+        <h1>Organ Teachers</h1>
+        <div className={classes.Teachers}>
+          {teachersData.map((teacher) => (
+            <TeacherCard teacher={teacher} key={teacher.id} />
+          ))}
+        </div>
       </div>
-    </div>
-  </Layout>
+    </Layout>
+  </>
 );
 
 export default OrganTeachers;

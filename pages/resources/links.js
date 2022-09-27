@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 // import Link from "next/link";
 import Layout from "../../components/Layout/Layout";
 import LinkCard from "../../components/Resources/LinkCard/LinkCard";
@@ -29,13 +30,21 @@ const Links = ({ globalData, linkData }) => {
   );
 
   return (
-    <Layout globalData={globalData}>
-      <div className={classes.Links}>
-        <div className="row">
-          <h1>Links</h1>
-          <div className={classes.Links__Group}>
-            {/* <h2>AGO National</h2> */}
-            {/* {renderLinkList(
+    <>
+      <SEO
+        metaData={{
+          metaTitle: "Links",
+          metaDescription:
+            "Links to promote sister chapters, education, AGO National and partner organizations",
+        }}
+      />
+      <Layout globalData={globalData}>
+        <div className={classes.Links}>
+          <div className="row">
+            <h1>Links</h1>
+            <div className={classes.Links__Group}>
+              {/* <h2>AGO National</h2> */}
+              {/* {renderLinkList(
               linkData.filter((link) => link.Category === "AGO National")
             )}
           </div>
@@ -58,17 +67,18 @@ const Links = ({ globalData, linkData }) => {
                 (link) => link.Category === "Partner Organizations"
               )
             )} */}
-            <Fade bottom>
-              <div className={classes.Grid}>
-                {linkData.map((link) => (
-                  <LinkCard link={link} key={link.id} />
-                ))}
-              </div>
-            </Fade>
+              <Fade bottom>
+                <div className={classes.Grid}>
+                  {linkData.map((link) => (
+                    <LinkCard link={link} key={link.id} />
+                  ))}
+                </div>
+              </Fade>
+            </div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

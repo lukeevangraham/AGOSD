@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import Image from "next/image";
 import Layout from "../../components/Layout/Layout";
 import { getGlobalData } from "../../lib/api";
@@ -21,6 +22,8 @@ export async function getStaticProps() {
 }
 
 const Jobs = ({ globalData, jobsData, placementData }) => (
+  <>
+  <SEO metaData={{ metaTitle: "Jobs", metaDescription: "Opportunities for employment in organ and music related positions around San Diego, CA" }} />
   <Layout globalData={globalData}>
     <div className="row">
       <div className={classes.Jobs}>
@@ -78,6 +81,7 @@ const Jobs = ({ globalData, jobsData, placementData }) => (
       </div>
     </div>
   </Layout>
+  </>
 );
 
 export default Jobs;

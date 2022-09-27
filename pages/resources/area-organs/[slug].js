@@ -1,3 +1,4 @@
+import SEO from "../../../components/SEO/SEO";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { getGlobalData } from "../../../lib/api";
@@ -38,53 +39,62 @@ const Organ = ({ globalData, organData }) => {
   }
 
   return (
-    <Layout globalData={globalData}>
-      <div className={classes.Organ}>
-        <div className="row">
-          <OrganHeader organData={organData} />
-        </div>
-        {organData.area_organs.data.map((organ) => (
-          <div key={organ.id} style={{ marginTop: "7.5rem" }}>
-            <div className="row">
-              <div key={organ.id} className={classes.Organ__InstrumentDetail}>
-                <h2 className={classes.Organ__InstrumentDetail__Location}>
-                  {organ.attributes.Location ? organ.attributes.Location : null}
-                </h2>
-                <div
-                  className={classes.Organ__InstrumentDetail__Description}
-                  dangerouslySetInnerHTML={{
-                    __html: organ.attributes.Description,
-                  }}
-                />
-                <div className={classes.Organ__InstrumentDetail__FinerPoints}>
+    <>
+      <SEO
+        metaData={{
+          metaTitle: `Organs: ${organData.Name}`,
+          metaDescription: `Info on the organ(s) of ${organData.Name} in ${organData.Address.City}, CA`,
+        }}
+      />
+      <Layout globalData={globalData}>
+        <div className={classes.Organ}>
+          <div className="row">
+            <OrganHeader organData={organData} />
+          </div>
+          {organData.area_organs.data.map((organ) => (
+            <div key={organ.id} style={{ marginTop: "7.5rem" }}>
+              <div className="row">
+                <div key={organ.id} className={classes.Organ__InstrumentDetail}>
+                  <h2 className={classes.Organ__InstrumentDetail__Location}>
+                    {organ.attributes.Location
+                      ? organ.attributes.Location
+                      : null}
+                  </h2>
                   <div
-                    className={
-                      classes.Organ__InstrumentDetail__FinerPoints__MakeAndModel
-                    }
-                  >
-                    <svg>
-                      <use xlinkHref="../../images/sprite.svg#icon-cogs"></use>
-                    </svg>
-                    <div>{organ.attributes.makeAndmodel}</div>
-                  </div>
-                  <div
-                    className={
-                      classes.Organ__InstrumentDetail__FinerPoints__Specs
-                    }
-                  >
-                    <a
-                      href={organ.attributes.Specs.data.attributes.url}
-                      target="_blank"
-                      rel="noreferrer"
+                    className={classes.Organ__InstrumentDetail__Description}
+                    dangerouslySetInnerHTML={{
+                      __html: organ.attributes.Description,
+                    }}
+                  />
+                  <div className={classes.Organ__InstrumentDetail__FinerPoints}>
+                    <div
+                      className={
+                        classes.Organ__InstrumentDetail__FinerPoints__MakeAndModel
+                      }
                     >
                       <svg>
-                        <use xlinkHref="../../images/sprite.svg#icon-file-pdf"></use>
+                        <use xlinkHref="../../images/sprite.svg#icon-cogs"></use>
                       </svg>
-                      Organ Specs
-                    </a>
+                      <div>{organ.attributes.makeAndmodel}</div>
+                    </div>
+                    <div
+                      className={
+                        classes.Organ__InstrumentDetail__FinerPoints__Specs
+                      }
+                    >
+                      <a
+                        href={organ.attributes.Specs.data.attributes.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <svg>
+                          <use xlinkHref="../../images/sprite.svg#icon-file-pdf"></use>
+                        </svg>
+                        Organ Specs
+                      </a>
+                    </div>
                   </div>
-                </div>
-                {/* <div className={classes.Organ__InstrumentDetail_topImage}>
+                  {/* <div className={classes.Organ__InstrumentDetail_topImage}>
                 <Image
                   src={organ.attributes.Images.data[0].attributes.url}
                   alt={
@@ -94,12 +104,12 @@ const Organ = ({ globalData, organData }) => {
                   objectFit="contain"
                 />
               </div> */}
+                </div>
               </div>
-            </div>
 
-            <PhotoShowcase data={organ.attributes.Images.data} />
+              <PhotoShowcase data={organ.attributes.Images.data} />
 
-            {/* <div className={classes.Organ__Images}>
+              {/* <div className={classes.Organ__Images}>
               {organ.attributes.Images.data.length > 1
                 ? organ.attributes.Images.data.map((image) => (
                     <div
@@ -117,11 +127,12 @@ const Organ = ({ globalData, organData }) => {
                   ))
                 : null}
             </div> */}
-          </div>
-        ))}
-      </div>
-      {/* </div> */}
-    </Layout>
+            </div>
+          ))}
+        </div>
+        {/* </div> */}
+      </Layout>
+    </>
   );
 };
 

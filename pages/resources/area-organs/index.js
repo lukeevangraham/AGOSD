@@ -1,3 +1,4 @@
+import SEO from "../../../components/SEO/SEO";
 import Layout from "../../../components/Layout/Layout";
 import { getGlobalData } from "../../../lib/api";
 import { getOrgansData } from "../../../lib/resources";
@@ -17,6 +18,8 @@ export async function getStaticProps() {
 }
 
 const AreaOrgans = ({ globalData, organsData }) => (
+  <>
+  <SEO metaData={{ metaTitle: "Area Organs", metaDescription: "Information and photos about organs in and around San Diego, California" }} />
   <Layout globalData={globalData}>
     <div className="row">
       <h1>Area Organs</h1>
@@ -29,6 +32,7 @@ const AreaOrgans = ({ globalData, organsData }) => (
       </div>
     </div>
   </Layout>
+  </>
 );
 
 export default AreaOrgans;

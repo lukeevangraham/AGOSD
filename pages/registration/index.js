@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import Image from "next/image";
 import Layout from "../../components/Layout/Layout";
 import { getGlobalData } from "../../lib/api";
@@ -17,40 +18,49 @@ export async function getStaticProps() {
 }
 
 const Registration = ({ globalData, registrationData }) => (
-  <Layout globalData={globalData}>
-    <div className="row">
-      <h1>Registration</h1>
-      <div className={classes.Registration}>
-        <div className={classes.Registration__Image}>
-          <Image
-            src={registrationData.Image.data.attributes.url}
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-        <div className={classes.Registration__Body}>
-          <div
-            dangerouslySetInnerHTML={{ __html: registrationData.Body }}
-          ></div>
+  <>
+    <SEO
+      metaData={{
+        metaTitle: "Registration",
+        metaDescription:
+          "Members of the AGO enjoy a wealth of benefits and services under the guidance of the National Officers; Councillors for Education, Professional Development, Competitions and New Music, Conventions, and Finance and Development; Regional Councillors; and all other volunteer leaders of the Guild.",
+      }}
+    />
+    <Layout globalData={globalData}>
+      <div className="row">
+        <h1>Registration</h1>
+        <div className={classes.Registration}>
+          <div className={classes.Registration__Image}>
+            <Image
+              src={registrationData.Image.data.attributes.url}
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+          <div className={classes.Registration__Body}>
+            <div
+              dangerouslySetInnerHTML={{ __html: registrationData.Body }}
+            ></div>
 
-          <div className={classes.Registration__Body__Button}>
-            <a
-              href={registrationData.RegistrationLink}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className={classes.Registration__Body__Button_doc}>
-                <svg>
-                  <use xlinkHref="../images/sprite.svg#icon-pen"></use>
-                </svg>
-                <div>Application</div>
-              </div>
-            </a>
+            <div className={classes.Registration__Body__Button}>
+              <a
+                href={registrationData.RegistrationLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className={classes.Registration__Body__Button_doc}>
+                  <svg>
+                    <use xlinkHref="../images/sprite.svg#icon-pen"></use>
+                  </svg>
+                  <div>Application</div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </Layout>
+    </Layout>
+  </>
 );
 
 export default Registration;

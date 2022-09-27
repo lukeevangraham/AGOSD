@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import { useState } from "react";
 import Image from "next/image";
 import Layout from "../../components/Layout/Layout";
@@ -37,6 +38,8 @@ const About = ({ globalData, boardData, aboutData, photoAlbums }) => {
   };
 
   return (
+    <>
+    <SEO metaData={aboutData.SEO} />
     <Layout globalData={globalData}>
       <div className={classes.About}>
         <div className="row">
@@ -167,6 +170,7 @@ const About = ({ globalData, boardData, aboutData, photoAlbums }) => {
         </section>
       </div>
     </Layout>
+    </>
   );
 };
 
