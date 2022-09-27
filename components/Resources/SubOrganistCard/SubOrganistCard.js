@@ -11,6 +11,7 @@ const SubOrganistCard = ({ organist }) => (
         {organist.attributes.Image.data ? (
           <Image
             src={organist.attributes.Image.data.attributes.url}
+            alt={organist.attributes.Image.data.attributes.alternativeText}
             layout="fill"
             objectFit="cover"
           />
