@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+import classNames from "classnames";
 import Link from "next/link";
 import NavigationItem from "./NavigationItem/NavigationItem";
 
@@ -43,6 +45,8 @@ const NavigationItems = ({
     </div>
   );
 
+  const router = useRouter();
+
   return (
     <div className={classes.NavigationItems}>
       <NavigationItem />
@@ -56,7 +60,9 @@ const NavigationItems = ({
             ? setMegaMenuContent(null)
             : setMegaMenuContent(resources)
         }
-        className={classes.NavigationItems__MegaMenu}
+        className={classNames([classes.NavigationItems__MegaMenu], {
+          [classes.active]: router.pathname.startsWith("/resources"),
+        })}
       >
         Resources {fromSideDrawer ? (megaMenuContent ? " ↑" : " ↓") : null}
       </div>

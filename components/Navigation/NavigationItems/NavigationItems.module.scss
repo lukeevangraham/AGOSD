@@ -33,6 +33,10 @@
   }
 }
 
+.active {
+  color: $color-primary-lighter !important;
+}
+
 .MegaMenu {
   display: flex;
   justify-content: space-evenly;
