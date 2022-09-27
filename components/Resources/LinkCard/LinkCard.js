@@ -8,6 +8,7 @@ const LinkCard = ({ link }) => (
       <div className={classes.LinkCard__Image}>
         <Image
           src={link.Image.data.attributes.url}
+          alt={link.Image.data.attributes.alternativeText}
           layout="fill"
           objectFit="cover"
         />

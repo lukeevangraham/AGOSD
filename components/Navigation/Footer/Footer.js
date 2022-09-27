@@ -19,6 +19,12 @@ const Footer = () => (
             <a> &rsaquo; Area Organs</a>
           </Link>
         </li>
+        <li>
+          {" "}
+          <Link href="/contact">
+            <a> &rsaquo; Contact Us</a>
+          </Link>
+        </li>
       </ul>
     </div>
     <div className={classes.Footer__Social}>
