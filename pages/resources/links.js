@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SEO from "../../components/SEO/SEO";
 // import Link from "next/link";
 import Layout from "../../components/Layout/Layout";
@@ -21,13 +22,13 @@ export async function getStaticProps() {
 }
 
 const Links = ({ globalData, linkData }) => {
-  const renderLinkList = (links) => (
-    <div className={classes.Grid}>
-      {links.map((link) => (
-        <LinkCard link={link} key={link.id} />
-      ))}
-    </div>
-  );
+  const [filter, setFilter] = useState(null);
+
+  const renderLinkList = filter
+    ? linkData
+        .filter((link) => link.Category === filter)
+        .map((link) => <LinkCard link={link} key={link.id} />)
+    : linkData.map((link) => <LinkCard link={link} key={link.id} />);
 
   return (
     <>
@@ -42,37 +43,45 @@ const Links = ({ globalData, linkData }) => {
         <div className={classes.Links}>
           <div className="row">
             <h1>Links</h1>
-            <div className={classes.Links__Group}>
-              {/* <h2>AGO National</h2> */}
-              {/* {renderLinkList(
-              linkData.filter((link) => link.Category === "AGO National")
-            )}
-          </div>
-          <div className={classes.Links__Group}>
-            <h2>Sister Chapters</h2>
-            {renderLinkList(
-              linkData.filter((link) => link.Category === "Sister Chapters")
-            )}
-          </div>
-          <div className={classes.Links__Group}>
-            <h2>Education</h2>
-            {renderLinkList(
-              linkData.filter((link) => link.Category === "Education")
-            )}
-          </div>
-          <div className={classes.Links__Group}>
-            <h2>Partner Organizations</h2>
-            {renderLinkList(
-              linkData.filter(
-                (link) => link.Category === "Partner Organizations"
-              )
-            )} */}
-              <Fade bottom>
-                <div className={classes.Grid}>
-                  {linkData.map((link) => (
-                    <LinkCard link={link} key={link.id} />
-                  ))}
+            {/* {console.log("HERE: ", linkData)} */}
+            <div className={classes.Links__Controls}>
+              <div className={classes.Links__Controls__Label}>Filter:</div>
+              <div className={classes.Links__Controls__Buttons}>
+                <div
+                  className={classes.Links__Controls__Buttons__button}
+                  onClick={() => setFilter(null)}
+                >
+                  Show All
                 </div>
+                <div
+                  className={classes.Links__Controls__Buttons__button}
+                  onClick={() => setFilter("AGO National")}
+                >
+                  AGO National
+                </div>
+                <div
+                  className={classes.Links__Controls__Buttons__button}
+                  onClick={() => setFilter("Partner Organizations")}
+                >
+                  Partner Organizations
+                </div>
+                <div
+                  className={classes.Links__Controls__Buttons__button}
+                  onClick={() => setFilter("Education")}
+                >
+                  Education
+                </div>
+                <div
+                  className={classes.Links__Controls__Buttons__button}
+                  onClick={() => setFilter("Sister Chapters")}
+                >
+                  Sister Chapters
+                </div>
+              </div>
+            </div>
+            <div className={classes.Links__Group}>
+              <Fade bottom>
+                <div className={classes.Grid}>{renderLinkList}</div>
               </Fade>
             </div>
           </div>
