@@ -3,32 +3,55 @@
 .Footer {
   // margin-top: 10rem;
   background-color: $color-primary-light;
-  padding: 2rem 4rem;
-  display: flex;
-  justify-content: space-around;
+  // padding: 4rem 4rem;
+  // display: flex;
+  // justify-content: space-around;
+  position: relative;
+  overflow: hidden;
 
-  &__UsefulLinks {
-    font-weight: 700;
+  &__BGImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.15;
+    filter: blur(.5rem);
+  }
 
-    ul {
-      margin-top: 1rem;
-      li {
-        list-style: none;
-        font-weight: 400;
-        margin-left: 1.5rem;
+  &__Content {
+    position: relative;
+    padding: 5rem;
+    display: flex;
+    justify-content: space-around;
 
-        a {
-          text-decoration: none;
+    &__Brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__UsefulLinks {
+      font-weight: 700;
+
+      ul {
+        margin-top: 1rem;
+        li {
+          list-style: none;
+          font-weight: 400;
+          margin-left: 1.5rem;
+
+          a {
+            text-decoration: none;
+          }
         }
       }
     }
-  }
 
-  &__Social {
-    svg {
-      width: 3rem;
-      height: 3rem;
-      fill: $color-secondary-darker;
+    &__Social {
+      svg {
+        width: 3rem;
+        height: 3rem;
+        fill: $color-secondary-darker;
+      }
     }
   }
 }
