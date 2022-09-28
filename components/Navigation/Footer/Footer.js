@@ -15,7 +15,7 @@ const Footer = () => (
     <div className="row">
       <div className={classes.Footer__Content}>
         <div className={classes.Footer__Content__Brand}>
-          <img src="/images/LogoB&W.svg" alt="" srcset="" width="70rem" />
+          <img src="/images/LogoB&W.svg" alt="" width="70rem" />
           <div>American Guild of Organists, San Diego Chapter</div>
         </div>
 
