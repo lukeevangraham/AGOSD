@@ -2,7 +2,6 @@ import classes from "./DateBox.module.scss";
 
 const DateBox = ({ date }) => (
   <div className={classes.DateBox}>
-    {console.log("D: ", date)}
     <div className={classes.DateBox__Date}>
       {new Date(date).toLocaleDateString("en-US", { day: "numeric" })}
     </div>

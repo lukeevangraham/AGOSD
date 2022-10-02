@@ -66,6 +66,11 @@
       margin: 5rem;
       position: relative;
 
+      @include respond(tab-port) {
+        margin: 5rem 0 0 0;
+        height: unset;
+      }
+
       &__photo {
         width: 55%;
         position: absolute;
@@ -73,6 +78,13 @@
         transition: all 0.2s;
         aspect-ratio: 8/6;
         box-shadow: 0 0 4rem rgba($color-grey-dark, 0.5);
+
+        @include respond(tab-port) {
+          float: left;
+          position: relative;
+          width: 33.3333333%;
+          box-shadow: 0 1.5rem 3rem rgba($color-black, 0.2);
+        }
 
         &_p1 {
           //   position: relative;
