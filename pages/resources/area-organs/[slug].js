@@ -51,7 +51,7 @@ const Organ = ({ globalData, organData }) => {
           <div className="row">
             <OrganHeader organData={organData} />
           </div>
-          {organData.area_organs.data.map((organ) => (
+          {organData.area_organs.data.reverse().map((organ) => (
             <div key={organ.id} style={{ marginTop: "7.5rem" }}>
               <div className="row">
                 <div key={organ.id} className={classes.Organ__InstrumentDetail}>
