@@ -82,6 +82,10 @@
         &__Description {
           margin-top: 2rem;
         }
+
+        @include respond(tab-port) {
+          width: 100%;
+        }
       }
 
       &:nth-child(even) {

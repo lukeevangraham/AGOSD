@@ -119,8 +119,8 @@ const Education = ({ globalData, educationData }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="row u-padding-top-medium">
-                    <div className={`${classes.Scholarships__Main}`}>
+                  <div className={`row`}>
+                    <div className={`${classes.Scholarships__Main} ${classes.Scholarships__PipeOrgan}`}>
                       <div
                         className={classes.Scholarships__Main__Body}
                         dangerouslySetInnerHTML={{

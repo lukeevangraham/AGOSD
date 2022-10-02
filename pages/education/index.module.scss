@@ -83,6 +83,12 @@
       flex-direction: column;
     }
   }
+
+  &__PipeOrgan {
+    border-top: solid rgba($color-primary-dark, .5) 1px;
+    margin-top: 5rem;
+    padding-top: 2rem;
+  }
 }
 
 .WhiteBg {

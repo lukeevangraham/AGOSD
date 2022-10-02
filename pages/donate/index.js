@@ -1,6 +1,7 @@
 import SEO from "../../components/SEO/SEO";
 import { useEffect, useState } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Script from "next/script";
 import Layout from "../../components/Layout/Layout";
 import { getGlobalData } from "../../lib/api";
@@ -33,13 +34,22 @@ const Donate = ({ globalData, donateData }) => {
       <Layout globalData={globalData}>
         <div className="row u-padding-bottom-medium">
           <h1>Donate</h1>
-          <div className={classes.Donate__FormAndFunds}>
-            <DonateButton />
+          <section className={classes.Donate__FormAndFunds}>
+            <div className={classes.Donate__FormAndFunds__Image}>
+              <Image
+                src={donateData.Image.data.attributes.url}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
 
-            {/* <DonateForm /> */}
-
-            <div dangerouslySetInnerHTML={{ __html: donateData.TopText }}></div>
-          </div>
+            <div>
+              <DonateButton />
+              <div
+                dangerouslySetInnerHTML={{ __html: donateData.TopText }} className={classes.Donate__FormAndFunds__Main}
+              ></div>
+            </div>
+          </section>
         </div>
         {/* {PayPal.Donation.Button({
        env: 'sandbox',

@@ -3,11 +3,11 @@
 .DateBox {
   background-color: rgba($color-primary-light, 1);
   // position: absolute;
-  padding: 1rem;
+  padding: 1.9rem 1rem;
   //   text-align: center;
-  border-radius: 50%;
+  border-radius: 10rem;
   width: 7.5rem;
-  height: 7.5rem;
+  // height: 7.5rem;
   //   top: 0;
   // margin-left: 1rem;
   // margin-top: -2rem;
@@ -24,5 +24,12 @@
   &__Month {
     text-transform: uppercase;
     font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: -2px;
+  }
+  &__Year {
+    font-weight: 600;
+    opacity: .7;
+    // color: lighten($color-grey-dark, 15%);
   }
 }

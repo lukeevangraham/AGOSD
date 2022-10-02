@@ -27,7 +27,7 @@ const Jobs = ({ globalData, jobsData, placementData }) => (
   <Layout globalData={globalData}>
     <div className="row">
       <div className={classes.Jobs}>
-        <h1>Jobs</h1>
+        <h1>Looking For A Job?</h1>
         <div className={classes.Jobs__Rates}>
           <div>Advertising Rates</div>
           <div>$35 per listing for up to six months.</div>

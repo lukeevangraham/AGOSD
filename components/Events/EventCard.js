@@ -19,7 +19,7 @@ const EventCard = ({ event }) => {
             />
           </div>
         </a>
-      </Link>
+      </Link>{" "}
       <div className={classes.EventCard__Date}>
         <DateBox date={event.attributes.dateAndTime} />
       </div>

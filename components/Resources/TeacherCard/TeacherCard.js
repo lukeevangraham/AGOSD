@@ -40,7 +40,7 @@ const TeacherCard = ({ teacher }) => (
           </svg>
 
           <div style={{ textDecoration: "none" }}>
-            {teacher.attributes.Website}
+            Website
           </div>
         </a>
       ) : null}
