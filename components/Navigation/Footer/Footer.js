@@ -119,6 +119,7 @@ const Footer = () => (
           href="http://grahamwebworks.com"
           target="_blank"
           className={classes.Footer__Fineprint_GWW}
+          rel="noreferrer"
         >
           Graham Web Works
         </a>
