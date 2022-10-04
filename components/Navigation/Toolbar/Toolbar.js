@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Brandname from "../../UI/Brandname/Brandname";
 import DrawerToggle from "../SideDrawer/DrawerToggle/DrawerToggle";
 import NavigationItems from "../NavigationItems/NavigationItems";
 
@@ -20,11 +21,7 @@ const Toolbar = ({
             layout="fill"
           />
         </div>
-        <div className={classes.Toolbar__Brand__Name}>
-          <div>American Guild of Organists</div>
-          <div>San Diego</div>
-          <div>Chapter</div>
-        </div>
+        <Brandname />
       </div>
     </Link>
     <div className={classes.Toolbar__DesktopOnly}>

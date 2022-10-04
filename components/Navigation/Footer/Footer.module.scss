@@ -15,18 +15,23 @@
     height: 100%;
     top: 0;
     opacity: 0.15;
-    filter: blur(.5rem);
+    filter: blur(0.5rem);
+    z-index: 0;
+    // z-index: 0;
   }
 
   &__Content {
     position: relative;
-    padding: 5rem;
+    padding: 5rem 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba($color-black, 0.4);
 
     &__Brand {
       display: flex;
-      flex-direction: column;
+      // flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
     }
 
     &__UsefulLinks {
@@ -47,11 +52,39 @@
     }
 
     &__Social {
+      display: flex;
+      gap: 1rem;
       svg {
         width: 3rem;
         height: 3rem;
         fill: $color-secondary-darker;
+        transition: all 0.2s;
+
+        &:hover {
+          fill: $color-primary-dark;
+        }
       }
+    }
+  }
+
+  &__Fineprint {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0 3rem 0;
+    font-size: 1.5rem;
+    z-index: 10;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        color: $color-primary-dark;
+      }
+    }
+
+    &_GWW {
+      opacity: 0.5;
     }
   }
 }
