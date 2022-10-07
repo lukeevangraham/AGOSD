@@ -29,7 +29,7 @@ const DonateButton = () => {
   return (
     <div>
       {/* <div id="donate-button" /> */}
-      <form action="https://www.paypal.com/donate" method="post" target="_top">
+      <form action="https://www.paypal.com/donate" method="post" target="_blank">
         <input type="hidden" name="hosted_button_id" value="BVC6NV4LE9PX8" />
         <input
           type="image"
