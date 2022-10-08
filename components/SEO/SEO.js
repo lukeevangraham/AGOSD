@@ -16,15 +16,6 @@ const SEO = ({ metaData }) => (
                 height: metaData.shareImage.data.attributes.height,
                 alt: metaData.shareImage.data.attributes.alternativeText,
               },
-              {
-                url: metaData.shareImage.data.attributes.formats.thumbnail.url,
-                width:
-                  metaData.shareImage.data.attributes.formats.thumbnail.width,
-                height:
-                  metaData.shareImage.data.attributes.formats.thumbnail.height,
-                alt: metaData.shareImage.data.attributes.formats.thumbnail
-                  .alternativeText,
-              },
             ],
           }
         : { title: metaData.metaTitle, description: metaData.metaDescription }
