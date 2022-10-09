@@ -41,7 +41,7 @@ const Event = ({ globalData, eventData }) => {
         metaData={{
           metaTitle: `Event: ${eventData.Name}`,
           metaDescription: eventData.Description.replace(/<[^>]*>/g, ""),
-          shareImage: eventData.Image
+          shareImage: eventData.Image,
         }}
       />
       <Layout globalData={globalData}>
