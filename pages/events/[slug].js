@@ -46,7 +46,6 @@ const Event = ({ globalData, eventData }) => {
       />
       <Layout globalData={globalData}>
         <div className="row">
-          {console.log("eventD: ", eventData.Image)}
           <div className={classes.Event}>
             <div className={classes.Container}>
               <div className={classes.Event__Image}>
