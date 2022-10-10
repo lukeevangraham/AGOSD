@@ -1,11 +1,11 @@
 @import "../../../styles/abstracts/variables";
 
 .SearchBar {
-  background-color: $color-primary;
+  // background-color: $color-primary;
   height: 6rem;
   z-index: 0;
   position: absolute;
-  top: -1.5rem;
+  top: 0rem;
   left: -.6rem;
   width: 100%;
   border-radius: 0 0 2rem 2rem;
@@ -17,7 +17,7 @@
   }
 
   &__Open {
-    top: 1.3rem;
+    top: 8.6rem;
     z-index: 4;
     opacity: 1;
   }
