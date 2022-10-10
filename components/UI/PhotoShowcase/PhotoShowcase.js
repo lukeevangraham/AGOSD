@@ -16,6 +16,7 @@ const PhotoShowcase = ({ data }) => {
               src={showModal.attributes.url}
               layout="fill"
               objectFit="contain"
+              alt={showModal.attributes.alternativeText}
             />
           </div>
         </Modal>

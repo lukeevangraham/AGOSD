@@ -14,6 +14,7 @@ const EventCard = ({ event }) => {
           <div className={classes.EventCard__Image}>
             <Image
               src={event.attributes.Image.data.attributes.url}
+              alt={event.attributes.Image.data.attributes.alternativeText}
               layout="fill"
               objectFit="cover"
             />

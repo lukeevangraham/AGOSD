@@ -33,6 +33,7 @@ const Registration = ({ globalData, registrationData }) => (
           <div className={classes.Registration__Image}>
             <Image
               src={registrationData.Image.data.attributes.url}
+              alt={registrationData.Image.data.attributes.alternativeText}
               layout="fill"
               objectFit="cover"
             />

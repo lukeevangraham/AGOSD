@@ -40,6 +40,7 @@ const Donate = ({ globalData, donateData }) => {
                 src={donateData.Image.data.attributes.url}
                 layout="fill"
                 objectFit="cover"
+                alt={donateData.Image.data.attributes.alternativeText}
               />
             </div>
 

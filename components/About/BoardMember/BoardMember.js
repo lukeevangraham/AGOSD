@@ -11,6 +11,7 @@ const BoardMember = ({ member }) => (
       {member.Image.data ? (
         <Image
           src={member.Image.data.attributes.url}
+          alt={member.Image.data.attributes.alternativeText}
           layout="fill"
           objectFit="cover"
         />

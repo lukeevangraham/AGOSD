@@ -11,6 +11,7 @@ const Footer = () => (
           "https://res.cloudinary.com/dhsn4mic4/image/upload/v1661720524/josh_applegate_vvehw_J_Ba_YFU_unsplash_f3032b6eb6.jpg?updated_at=2022-08-28T21:02:06.061Z"
         }
         layout="fill"
+        alt="Pipe Organ Pipes"
       />
     </div>
     <div className="row">

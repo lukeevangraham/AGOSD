@@ -30,7 +30,7 @@ export default function Home({ homeData, globalData, organsData }) {
 
   useEffect(() => {
     setRandomOrgan(organsData[Math.floor(Math.random() * organsData.length)]);
-  }, []);
+  }, [organsData]);
 
   return (
     <>

@@ -12,6 +12,7 @@ const TeacherCard = ({ teacher }) => (
           src={teacher.attributes.Image.data.attributes.url}
           layout="fill"
           objectFit="cover"
+          alt={teacher.attributes.Image.data.attributes.alternativeText}
         />
       ) : (
         <UserImageBlank />
@@ -39,9 +40,7 @@ const TeacherCard = ({ teacher }) => (
             <use xlinkHref="../images/sprite.svg#icon-link"></use>
           </svg>
 
-          <div style={{ textDecoration: "none" }}>
-            Website
-          </div>
+          <div style={{ textDecoration: "none" }}>Website</div>
         </a>
       ) : null}
     </div>

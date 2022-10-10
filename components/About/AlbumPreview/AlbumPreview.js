@@ -10,6 +10,7 @@ const AlbumPreview = ({ album }) => (
         <div className={classes.AlbumPreview__Image}>
           <Image
             src={album.attributes.Photos.data[0].attributes.url}
+            alt={album.attributes.Photos.data[0].attributes.alternativeText}
             layout="fill"
             objectFit="cover"
           />

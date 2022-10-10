@@ -58,6 +58,7 @@ const Jobs = ({ globalData, jobsData, placementData }) => (
                   {job.attributes.Images.data ? (
                     <Image
                       src={job.attributes.Images.data[0].attributes.url}
+                      alt={job.attributes.Images.data[0].attributes.alternativeText}
                       layout="fill"
                       objectFit="cover"
                     />

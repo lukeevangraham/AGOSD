@@ -45,6 +45,7 @@ const SideDrawer = ({
               <Image
                 src={globalData.Navbar.logo.data.attributes.url}
                 layout="fill"
+                alt={globalData.Navbar.logo.data.attributes.alternativeText}
               />
             </div>
             <Brandname />
