@@ -26,7 +26,7 @@ const SearchBar = ({ open, home }) => {
         [classes.SearchBar__NoBg]: home,
       })}
     >
-      <div className="row">
+      {/* <div className="row"> */}
         <form className={classes.SearchBar__Form} onSubmit={handleSubmit}>
           <input
             type="text"
@@ -48,7 +48,7 @@ const SearchBar = ({ open, home }) => {
           </div>
         </form>
       </div>
-    </div>
+    // </div>
   );
 };
 

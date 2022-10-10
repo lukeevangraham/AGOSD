@@ -6,8 +6,9 @@
   background-color: $color-primary-lighter;
   padding: 1.5rem;
   display: flex;
-  box-shadow: 0 0 2rem $color-grey;
+  box-shadow: 0 0 20px $color-grey;
   align-items: center;
+  border-radius: 1rem;
 
   &__Image {
     position: relative;

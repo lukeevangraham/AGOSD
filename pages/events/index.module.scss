@@ -77,11 +77,5 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
     gap: 4rem;
-    // display: flex;
-    // flex-wrap: wrap;
-
-    // & > * {
-    //   flex-basis: 30%;
-    // }
   }
 }

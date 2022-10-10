@@ -1,0 +1,19 @@
+.Search {
+  &__Events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(34rem, 50rem));
+    gap: 3rem;
+  }
+
+  &__Subs {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  &__OrganTeachers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 50rem));
+    gap: 2rem;
+  }
+}

@@ -28,12 +28,13 @@
 
   &__Form {
     position: relative;
-    margin-right: 10rem;
+    // margin-right: 10rem;
+    padding-right: 3rem;
     height: 100%;
 
     input {
       position: absolute;
-      right: 0rem;
+      right: 5.9rem;
       top: 50%;
       padding: 1rem 2rem;
       width: 35rem;
@@ -49,7 +50,7 @@
 
     &_SearchButton {
       position: absolute;
-      right: 0;
+      right: 3rem;
       top: 50%;
       height: 3.8rem;
       background-color: $color-grey-light;
