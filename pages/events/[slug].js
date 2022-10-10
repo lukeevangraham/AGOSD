@@ -51,6 +51,7 @@ const Event = ({ globalData, eventData }) => {
               <div className={classes.Event__Image}>
                 <Image
                   src={eventData.Image.data.attributes.url}
+                  alt={eventData.Image.data.attributes.alternativeText}
                   layout="fill"
                   objectFit="contain"
                   objectPosition="left"

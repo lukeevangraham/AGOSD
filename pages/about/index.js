@@ -59,6 +59,7 @@ const About = ({ globalData, boardData, aboutData, photoAlbums }) => {
               <div className={classes.About__TopInfo_Image}>
                 <Image
                   src={aboutData.topImage.data.attributes.url}
+                  alt={aboutData.topImage.data.attributes.alternativeText}
                   objectFit="cover"
                   layout="fill"
                 />
@@ -71,6 +72,7 @@ const About = ({ globalData, boardData, aboutData, photoAlbums }) => {
           <div className={classes.About__Values__BGImage}>
             <Image
               src="https://res.cloudinary.com/dhsn4mic4/image/upload/v1661452111/spreckels_Wide_4c8b6f925f.jpg?updated_at=2022-08-25T18:28:33.044Z"
+              alt="Spreckels Organ"
               layout="fill"
               objectFit="cover"
             />

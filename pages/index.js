@@ -49,6 +49,7 @@ export default function Home({ homeData, globalData, organsData }) {
             <div className={classes.main__Top__Image}>
               <Image
                 src={homeData.TopImage.data.attributes.url}
+                alt={homeData.TopImage.data.attributes.alternativeText}
                 layout="fill"
                 objectFit="cover"
                 priority
@@ -68,6 +69,9 @@ export default function Home({ homeData, globalData, organsData }) {
                   >
                     <Image
                       src={homeData.IntroCollage.data[0].attributes.url}
+                      alt={
+                        homeData.IntroCollage.data[0].attributes.alternativeText
+                      }
                       layout="fill"
                       objectFit="cover"
                     />
@@ -77,6 +81,9 @@ export default function Home({ homeData, globalData, organsData }) {
                   >
                     <Image
                       src={homeData.IntroCollage.data[2].attributes.url}
+                      alt={
+                        homeData.IntroCollage.data[2].attributes.alternativeText
+                      }
                       layout="fill"
                       objectFit="cover"
                     />
@@ -86,6 +93,9 @@ export default function Home({ homeData, globalData, organsData }) {
                   >
                     <Image
                       src={homeData.IntroCollage.data[1].attributes.url}
+                      alt={
+                        homeData.IntroCollage.data[1].attributes.alternativeText
+                      }
                       layout="fill"
                       objectFit="cover"
                     />
@@ -144,6 +154,11 @@ export default function Home({ homeData, globalData, organsData }) {
                             src={
                               randomOrgan.attributes.area_organs.data[0]
                                 .attributes.Images.data[0].attributes.url
+                            }
+                            alt={
+                              randomOrgan.attributes.area_organs.data[0]
+                                .attributes.Images.data[0].attributes
+                                .alternativeText
                             }
                             layout="fill"
                             objectFit="cover"

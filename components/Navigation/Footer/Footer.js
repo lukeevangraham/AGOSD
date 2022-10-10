@@ -17,7 +17,10 @@ const Footer = () => (
     <div className="row">
       <div className={classes.Footer__Content}>
         <div className={classes.Footer__Content__Brand}>
-          <img src="/images/LogoB&W.svg" alt="" width="70rem" />
+          <div className={classes.Footer__Content__Brand__Logo}>
+            <Image src={"/images/LogoB&W.svg"} alt="AGOSD Logo" layout="fill" objectFit="contain" objectPosition="top" />
+          </div>
+          {/* <img src="/images/LogoB&W.svg" alt="" width="70rem" /> */}
           {/* <div>American Guild of Organists, San Diego Chapter</div> */}
 
           <Brandname color={"black"} />

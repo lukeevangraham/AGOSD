@@ -32,6 +32,12 @@
       // flex-direction: column;
       align-items: flex-start;
       gap: 1rem;
+
+      &__Logo {
+        position: relative;
+        height: 100%;
+        width: 7rem;
+      }
     }
 
     &__UsefulLinks {

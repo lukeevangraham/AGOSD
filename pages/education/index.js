@@ -34,6 +34,7 @@ const Education = ({ globalData, educationData }) => {
             <div className={classes.Welcome__Image}>
               <Image
                 src={educationData.topImage.data.attributes.url}
+                alt={educationData.topImage.data.attributes.alternativeText}
                 layout="fill"
                 objectFit="cover"
               />
@@ -159,6 +160,7 @@ const Education = ({ globalData, educationData }) => {
               <div className={classes.Certifications__Image}>
                 <Image
                   src={educationData.CertificationImage.data.attributes.url}
+                  alt={educationData.CertificationImage.data.attributes.alternativeText}
                   layout="fill"
                   objectFit="cover"
                 />
