@@ -121,7 +121,7 @@ const Search = ({ globalData }) => {
           results.teachersData &&
           results.teachersData.data.length === 0 ? (
             <section>
-              No results found. That stinks. Perhaps you'd like to try another
+              No results found. That stinks. Perhaps you&apos;d like to try another
               search?
             </section>
           ) : null}
