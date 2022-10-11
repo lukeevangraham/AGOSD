@@ -6,7 +6,7 @@
   z-index: 0;
   position: absolute;
   top: 0rem;
-  left: -.6rem;
+  left: -0.6rem;
   width: 100%;
   border-radius: 0 0 2rem 2rem;
   transition: all 0.3s;
@@ -36,6 +36,7 @@
       position: absolute;
       right: 5.9rem;
       top: 50%;
+      height: 3.8rem;
       padding: 1rem 2rem;
       width: 35rem;
       font-family: inherit;
@@ -67,5 +68,3 @@
     }
   }
 }
-
-
