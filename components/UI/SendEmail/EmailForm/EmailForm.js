@@ -28,7 +28,6 @@ const EmailForm = ({ recipient }) => {
     });
 
     const result = await res.json();
-    console.log("RES: ", result);
     result.status == 200 ? setMessageStatus(200) : null;
   };
 

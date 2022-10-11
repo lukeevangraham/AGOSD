@@ -1,14 +1,21 @@
 .Search {
   &__Events {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(34rem, 50rem));
+    grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
     gap: 3rem;
   }
 
+  &__AreaOrgans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 4rem 2rem;
+    grid-auto-rows: 60rem;
+  }
+
   &__Subs {
-    display: flex;
-    gap: 4rem;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    gap: 2rem;
   }
 
   &__OrganTeachers {

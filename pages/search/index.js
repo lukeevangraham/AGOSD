@@ -39,7 +39,6 @@ const Search = ({ globalData }) => {
       <div className="row">
         <div className={classes.Search}>
           <h1>Search: </h1>
-          {console.log("[index] RES: ", results)}
           {results.eventData && results.eventData.data.length > 0 ? (
             <section>
               <h3>Events: </h3>
