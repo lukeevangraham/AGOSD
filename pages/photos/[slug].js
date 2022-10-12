@@ -59,7 +59,7 @@ const PhotoAlbum = ({ globalData, photoAlbumData }) => {
     return () => {
       document.removeEventListener("keydown", keyDownHandler);
     };
-  }, [showModal, setShowModal, photoAlbumData.Photos.data.length]);
+  }, [showModal, setShowModal, photoAlbumData]);
 
   if (router.isFallback) {
     return <div>Loading...</div>;
