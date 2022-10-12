@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getAllPhotoAlbumSlugs, getPhotoAlbumData } from "../../lib/photos";
 import { getGlobalData } from "../../lib/api";
 import { useRouter } from "next/router";
@@ -32,6 +32,34 @@ export async function getStaticProps({ params }) {
 const PhotoAlbum = ({ globalData, photoAlbumData }) => {
   const [showModal, setShowModal] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    const keyDownHandler = (e) => {
+      switch (e.code) {
+        case "Escape":
+          setShowModal(false);
+          return;
+        case "ArrowRight":
+          showModal < photoAlbumData.Photos.data.length - 1
+            ? setShowModal(showModal + 1)
+            : null;
+          return;
+        case "ArrowLeft":
+          showModal > 0 ? setShowModal(showModal - 1) : null;
+          return;
+        default:
+          console.log("HERE: ", e.code);
+          return;
+      }
+    };
+    showModal || showModal === 0
+      ? document.addEventListener("keydown", keyDownHandler)
+      : null;
+
+    return () => {
+      document.removeEventListener("keydown", keyDownHandler);
+    };
+  }, [showModal, setShowModal]);
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -70,15 +98,36 @@ const PhotoAlbum = ({ globalData, photoAlbumData }) => {
         }}
       />
       <Layout globalData={globalData}>
-        {showModal ? (
-          <Modal show={showModal} modalClosed={() => setShowModal(false)}>
-            <div className={classes.ModalImage}>
-              <Image
-                src={showModal.attributes.url}
-                layout="fill"
-                objectFit="contain"
-                alt={showModal.attributes.alternativeText}
-              />
+        {showModal || showModal === 0 ? (
+          <Modal show={true} modalClosed={() => setShowModal(false)}>
+            <div className={classes.ModalContainer}>
+              {showModal > 0 ? (
+                <div
+                  className={`${classes.ModalContainer__Control} ${classes.ModalContainer__Control_down}`}
+                  onClick={() => setShowModal(showModal - 1)}
+                >
+                  &#8592;
+                </div>
+              ) : null}
+              <div className={classes.ModalContainer__ModalImage}>
+                <Image
+                  src={photoAlbumData.Photos.data[showModal].attributes.url}
+                  layout="fill"
+                  objectFit="contain"
+                  alt={
+                    photoAlbumData.Photos.data[showModal].attributes
+                      .alternateText
+                  }
+                />
+              </div>
+              {showModal < photoAlbumData.Photos.data.length - 1 ? (
+                <div
+                  className={`${classes.ModalContainer__Control} ${classes.ModalContainer__Control_up}`}
+                  onClick={() => setShowModal(showModal + 1)}
+                >
+                  &#8594;
+                </div>
+              ) : null}
             </div>
           </Modal>
         ) : null}
@@ -100,9 +149,9 @@ const PhotoAlbum = ({ globalData, photoAlbumData }) => {
           </div>
 
           <div className={classes.PhotoAlbum__Photos}>
-            {photoAlbumData.Photos.data.map((photo) => (
+            {photoAlbumData.Photos.data.map((photo, index) => (
               <div
-                onClick={() => setShowModal(photo)}
+                onClick={() => setShowModal(index)}
                 key={photo.id}
                 className={classes.PhotoAlbum__Photos__Photo}
               >
