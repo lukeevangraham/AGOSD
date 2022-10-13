@@ -47,6 +47,10 @@ const Event = ({ globalData, eventData }) => {
       <Layout globalData={globalData}>
         <div className="row">
           <div className={classes.Event}>
+            
+            {/* not displayed, the h1 is only for SEO purposes */}
+
+            <h1 style={{ display: "none" }}>{eventData.Name}</h1>
             <div className={classes.Container}>
               <div className={classes.Event__Image}>
                 <Image
