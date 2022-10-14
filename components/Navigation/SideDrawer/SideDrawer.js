@@ -56,7 +56,7 @@ const SideDrawer = ({
             <input
               type="text"
               name="searchTerm"
-              id="searchTerm"
+              id="searchTermSideDrawer"
               placeholder="Search"
               autoFocus
               value={searchTerm}
