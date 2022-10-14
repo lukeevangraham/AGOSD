@@ -58,7 +58,19 @@
 
         @include respond(tab-port) {
           margin-top: 2rem;
+          li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            a {
+              height: 100%;
+              justify-self: center;
+              padding: 2.25rem 0;
+            }
+          }
         }
+
         li {
           list-style: none;
           font-weight: 400;
