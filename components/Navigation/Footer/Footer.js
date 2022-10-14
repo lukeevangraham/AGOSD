@@ -18,7 +18,13 @@ const Footer = () => (
       <div className={classes.Footer__Content}>
         <div className={classes.Footer__Content__Brand}>
           <div className={classes.Footer__Content__Brand__Logo}>
-            <Image src={"/images/LogoB&W.svg"} alt="AGOSD Logo" layout="fill" objectFit="contain" objectPosition="top" />
+            <Image
+              src={"/images/LogoB&W.svg"}
+              alt="AGOSD Logo"
+              layout="fill"
+              objectFit="contain"
+              objectPosition="top"
+            />
           </div>
           {/* <img src="/images/LogoB&W.svg" alt="" width="70rem" /> */}
           {/* <div>American Guild of Organists, San Diego Chapter</div> */}
@@ -102,6 +108,7 @@ const Footer = () => (
             href="https://www.facebook.com/AGOSanDiego"
             target="_blank"
             rel="noreferrer"
+            aria-label="Facebook"
           >
             <svg>
               <use xlinkHref="../images/sprite.svg#icon-facebook"></use>
@@ -111,6 +118,7 @@ const Footer = () => (
             href="https://www.facebook.com/AGOSanDiego"
             target="_blank"
             rel="noreferrer"
+            aria-label="Instagram"
           >
             <svg>
               <use xlinkHref="../images/sprite.svg#icon-instagram"></use>
