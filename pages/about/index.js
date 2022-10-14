@@ -39,139 +39,139 @@ const About = ({ globalData, boardData, aboutData, photoAlbums }) => {
 
   return (
     <>
-    <SEO metaData={aboutData.SEO} />
-    <Layout globalData={globalData}>
-      <div className={classes.About}>
-        <div className="row">
-          <h1 className="heading-primary">{aboutData.headingPrimary}</h1>
-          <div className={classes.About__TopInfo}>
-            <Fade left>
-              <div>
-                <h2 className="heading-secondary">
-                  {aboutData.headingSecondary}
-                </h2>
-                <div
-                  dangerouslySetInnerHTML={{ __html: aboutData.topText }}
-                ></div>
-              </div>
-            </Fade>
-            <Fade right>
-              <div className={classes.About__TopInfo_Image}>
-                <Image
-                  src={aboutData.topImage.data.attributes.url}
-                  alt={aboutData.topImage.data.attributes.alternativeText}
-                  objectFit="cover"
-                  layout="fill"
-                />
-              </div>
-            </Fade>
+      <SEO metaData={aboutData.SEO} />
+      <Layout globalData={globalData}>
+        <div className={classes.About}>
+          <div className="row">
+            <h1 className="heading-primary">{aboutData.headingPrimary}</h1>
+            <div className={classes.About__TopInfo}>
+              <Fade bottom>
+                <div>
+                  <h2 className="heading-secondary">
+                    {aboutData.headingSecondary}
+                  </h2>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: aboutData.topText }}
+                  ></div>
+                </div>
+              </Fade>
+              <Fade left>
+                <div className={classes.About__TopInfo_Image}>
+                  <Image
+                    src={aboutData.topImage.data.attributes.url}
+                    alt={aboutData.topImage.data.attributes.alternativeText}
+                    objectFit="cover"
+                    layout="fill"
+                  />
+                </div>
+              </Fade>
+            </div>
           </div>
-        </div>
 
-        <section className={classes.About__Values}>
-          <div className={classes.About__Values__BGImage}>
-            <Image
-              src="https://res.cloudinary.com/dhsn4mic4/image/upload/v1661452111/spreckels_Wide_4c8b6f925f.jpg?updated_at=2022-08-25T18:28:33.044Z"
-              alt="Spreckels Organ"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-          <div className={classes.About__Values__Text}>
-            <h2>Our Values</h2>
-            <Fade bottom cascade>
-              <div className={classes.About__Values__Text__Group}>
-                {aboutData.Values.map((value) => {
-                  let icon = null;
+          <section className={classes.About__Values}>
+            <div className={classes.About__Values__BGImage}>
+              <Image
+                src="https://res.cloudinary.com/dhsn4mic4/image/upload/v1661452111/spreckels_Wide_4c8b6f925f.jpg?updated_at=2022-08-25T18:28:33.044Z"
+                alt="Spreckels Organ"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+            <div className={classes.About__Values__Text}>
+              <h2>Our Values</h2>
+              <Fade bottom cascade>
+                <div className={classes.About__Values__Text__Group}>
+                  {aboutData.Values.map((value) => {
+                    let icon = null;
 
-                  if (value.Value === "Education") {
-                    icon = `../images/sprite.svg#icon-education`;
-                  }
-                  if (value.Value === "Community") {
-                    icon = `../images/sprite.svg#icon-user-group`;
-                  }
-                  if (value.Value === "Inclusiveness") {
-                    icon = `../images/sprite.svg#icon-user-plus`;
-                  }
-                  if (value.Value === "Diversity") {
-                    icon = `../images/sprite.svg#icon-earth`;
-                  }
+                    if (value.Value === "Education") {
+                      icon = `../images/sprite.svg#icon-education`;
+                    }
+                    if (value.Value === "Community") {
+                      icon = `../images/sprite.svg#icon-user-group`;
+                    }
+                    if (value.Value === "Inclusiveness") {
+                      icon = `../images/sprite.svg#icon-user-plus`;
+                    }
+                    if (value.Value === "Diversity") {
+                      icon = `../images/sprite.svg#icon-earth`;
+                    }
 
-                  return (
-                    <div
-                      key={value.id}
-                      className={classes.About__Values__Text__Group__Value}
-                    >
-                      <svg>
-                        <use xlinkHref={icon}></use>
-                      </svg>
+                    return (
                       <div
-                        className={
-                          classes.About__Values__Text__Group__Value_value
-                        }
+                        key={value.id}
+                        className={classes.About__Values__Text__Group__Value}
                       >
-                        {value.Value}
+                        <svg>
+                          <use xlinkHref={icon}></use>
+                        </svg>
+                        <div
+                          className={
+                            classes.About__Values__Text__Group__Value_value
+                          }
+                        >
+                          {value.Value}
+                        </div>
+                        <div>{value.Description}</div>
                       </div>
-                      <div>{value.Description}</div>
-                    </div>
-                  );
-                })}
-              </div>
-            </Fade>
-          </div>
-        </section>
-
-        <section>
-          <div className={`${classes.About__Photos}`}>
-            <h2>Photo Albums</h2>
-            <div className={classes.About__Photos__Wrapper}>
-              {albums.meta.pagination.page === 1 ? (
-                <div></div>
-              ) : (
-                <div
-                  className={classes.About__Photos__Wrapper__Button}
-                  onClick={paginateDown}
-                >
-                  <div>{"<"}</div>
+                    );
+                  })}
                 </div>
-              )}
-              <div className={classes.About__Photos__Wrapper__Previews}>
-                {albums.data.map((album) => (
-                  <AlbumPreview album={album} key={album.id} />
-                ))}
-              </div>
-              {albums.meta.pagination.page ===
-              albums.meta.pagination.pageCount ? null : (
-                <div
-                  className={classes.About__Photos__Wrapper__Button}
-                  onClick={paginateUp}
-                >
-                  <div>{">"}</div>
-                </div>
-              )}
+              </Fade>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section style={{ marginBottom: 0 }}>
-          <div
-            className={`${classes.About__Board} u-padding-bottom-medium u-padding-top-medium`}
-          >
-            <div className="row">
-              <h2>Our Board</h2>
-
-              <div className={classes.About__Board__BoardMembers}>
-                {boardData.map((member) => (
-                  <div key={member.id}>
-                    <BoardMember member={member} key={member.id} />
+          <section>
+            <div className={`${classes.About__Photos}`}>
+              <h2>Photo Albums</h2>
+              <div className={classes.About__Photos__Wrapper}>
+                {albums.meta.pagination.page === 1 ? (
+                  <div></div>
+                ) : (
+                  <div
+                    className={classes.About__Photos__Wrapper__Button}
+                    onClick={paginateDown}
+                  >
+                    <div>{"<"}</div>
                   </div>
-                ))}
+                )}
+                <div className={classes.About__Photos__Wrapper__Previews}>
+                  {albums.data.map((album) => (
+                    <AlbumPreview album={album} key={album.id} />
+                  ))}
+                </div>
+                {albums.meta.pagination.page ===
+                albums.meta.pagination.pageCount ? null : (
+                  <div
+                    className={classes.About__Photos__Wrapper__Button}
+                    onClick={paginateUp}
+                  >
+                    <div>{">"}</div>
+                  </div>
+                )}
               </div>
             </div>
-          </div>
-        </section>
-      </div>
-    </Layout>
+          </section>
+
+          <section style={{ marginBottom: 0 }}>
+            <div
+              className={`${classes.About__Board} u-padding-bottom-medium u-padding-top-medium`}
+            >
+              <div className="row">
+                <h2>Our Board</h2>
+
+                <div className={classes.About__Board__BoardMembers}>
+                  {boardData.map((member) => (
+                    <div key={member.id}>
+                      <BoardMember member={member} key={member.id} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </Layout>
     </>
   );
 };

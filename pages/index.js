@@ -62,7 +62,7 @@ export default function Home({ homeData, globalData, organsData }) {
                 className={classes.main__Intro__Text}
                 dangerouslySetInnerHTML={{ __html: homeData.IntroText }}
               ></div>
-              <Fade right cascade>
+              <Fade bottom cascade>
                 <div className={classes.main__Intro__Collage}>
                   <div
                     className={`${classes.main__Intro__Collage__photo} ${classes.main__Intro__Collage__photo_p1}`}
