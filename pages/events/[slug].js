@@ -40,14 +40,15 @@ const Event = ({ globalData, eventData }) => {
       <SEO
         metaData={{
           metaTitle: `Event: ${eventData.Name}`,
-          metaDescription: eventData.Description.replace(/<[^>]*>/g, ""),
+          metaDescription: eventData.Description
+            ? eventData.Description.replace(/<[^>]*>/g, "")
+            : null,
           shareImage: eventData.Image,
         }}
       />
       <Layout globalData={globalData}>
         <div className="row">
           <div className={classes.Event}>
-            
             {/* not displayed, the h1 is only for SEO purposes */}
 
             <h1 style={{ display: "none" }}>{eventData.Name}</h1>
