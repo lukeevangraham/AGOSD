@@ -13,6 +13,30 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  async redirects() {
+    return [
+      {
+        source: "/news-and-events/ago-chapter-events.html",
+        destination: "/events",
+        permanent: true,
+      },
+      {
+        source: "/news-and-events/community-sponsored-events.html",
+        destination: "/events",
+        permanent: true,
+      },
+      {
+        source: "/jobs/job-listings.html",
+        destination: "/jobs",
+        permanent: true,
+      },
+      {
+        source: "/about-us/our-board.html",
+        destination: "/about",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
