@@ -3,7 +3,11 @@ import Image from "next/image";
 import DateBox from "../../components/Events/DateBox/DateBox";
 import Layout from "../../components/Layout/Layout";
 import { getGlobalData } from "../../lib/api";
-import { getAllEventSlugs, getEventData } from "../../lib/events";
+import {
+  getAllEventSlugs,
+  getEventData,
+  keepEventsCurrent,
+} from "../../lib/events";
 import { useRouter } from "next/router";
 
 import classes from "./Slug.module.scss";
@@ -34,6 +38,8 @@ const Event = ({ globalData, eventData }) => {
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
+
+  keepEventsCurrent([{ attributes: eventData }]);
 
   return (
     <>
