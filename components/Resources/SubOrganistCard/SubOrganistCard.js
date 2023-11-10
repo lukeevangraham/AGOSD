@@ -26,7 +26,12 @@ const SubOrganistCard = ({ organist }) => (
           organist.attributes.lastName
         }`}</div>
         <div>{organist.attributes.Phone}</div>
-        <SendEmail contact={organist.attributes} source="TeacherCard" />
+        <div>
+          <a href={`mailto:${organist.attributes.Email}`}>
+            {organist.attributes.Email}
+          </a>
+        </div>
+        {/* <SendEmail contact={organist.attributes} source="TeacherCard" /> */}
         {/* <a href={`mailto: ${organist.attributes.Email}`}>
           {organist.attributes.Email}
         </a> */}
