@@ -23,7 +23,7 @@ const Payment = ({ globalData }) => {
         metaData={{
           metaTitle: "Scholarship Application Payment",
           metaDescription:
-            "Thank you for your 2022 Scholarship Application. The $30 application fee may be paid here.",
+            "Thank you for your Scholarship Application. The $30 application fee may be paid here.",
         }}
       />
       <Layout globalData={globalData}>
