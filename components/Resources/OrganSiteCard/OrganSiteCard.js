@@ -5,6 +5,7 @@ import classes from "./OrganSiteCard.module.scss";
 
 const OrganSiteCard = ({ organ }) => (
   <div className={classes.OrganCard}>
+    {/* {console.log("O: ", organ)} */}
     <Link href={`/resources/area-organs/${organ.attributes.slug}`}>
       <a>
         <div className={classes.OrganCard__Image}>
@@ -22,7 +23,6 @@ const OrganSiteCard = ({ organ }) => (
           />
         </div>
         <div className={classes.OrganCard__Name}>{organ.attributes.Name}</div>
-        {/* {console.log("O: ", organ)} */}
       </a>
     </Link>
   </div>

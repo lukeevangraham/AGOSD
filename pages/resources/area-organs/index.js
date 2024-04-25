@@ -32,7 +32,11 @@ const AreaOrgans = ({ globalData, organsData }) => (
         <div className={classes.AreaOrgans}>
           <div className={classes.AreaOrgans__Organs}>
             {organsData.map((organ) => (
-              <OrganSiteCard key={organ.id} organ={organ} />
+              <>
+                {organ.attributes.area_organs.data.length ? (
+                  <OrganSiteCard key={organ.id} organ={organ} />
+                ) : null}
+              </>
             ))}
           </div>
         </div>
