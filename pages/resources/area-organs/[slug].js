@@ -49,7 +49,13 @@ const Organ = ({ globalData, organData }) => {
       <Layout globalData={globalData}>
         <div className={classes.Organ}>
           <div className="row">
-            <OrganHeader organData={organData} />
+            {organData.area_organs.data.length ? (
+              <OrganHeader organData={organData} />
+            ) : (
+              <div className="u-padding-bottom-medium u-padding-top-medium">
+                No organ is associated with this site. Drat.
+              </div>
+            )}
           </div>
           {organData.area_organs.data.map((organ) => (
             <div key={organ.id} style={{ marginTop: "7.5rem" }}>
