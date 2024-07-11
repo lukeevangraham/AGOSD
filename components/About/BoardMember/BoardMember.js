@@ -33,7 +33,11 @@ const BoardMember = ({ member }) => (
     </div>
     <div className={classes.BoardMember__Position}>{member.Position}</div>
     <div className={classes.BoardMember__SendMail}>
-      <SendEmail collection={"/about"} contact={member} source="BoardMember" />
+      <svg>
+        <use xlinkHref="../images/sprite.svg#icon-envelope"></use>
+      </svg>
+      <a href={`mailto:${member.email}`}>{member.email}</a>
+      {/* <SendEmail collection={"/about"} contact={member} source="BoardMember" /> */}
     </div>
   </div>
 );
