@@ -23,12 +23,18 @@ const TeacherCard = ({ teacher }) => (
         {teacher.attributes.firstName} {teacher.attributes.lastName}
       </div>
       <div>{teacher.attributes.Phone}</div>
-      {/* <a href={`mailto: ${teacher.attributes.Email}`}>
-        {teacher.attributes.Email}
-      </a> */}
-      <div className={classes.TeacherCard__Info_sendEmail}>
-        <SendEmail contact={teacher.attributes} source="TeacherCard" />
+      <div className={classes.TeacherCard__Info__Email}>
+        <svg>
+          <use xlinkHref="../images/sprite.svg#icon-envelope"></use>
+        </svg>
+        <a href={`mailto: ${teacher.attributes.Email}`}>
+          {teacher.attributes.Email}
+        </a>
       </div>
+
+      {/* <div className={classes.TeacherCard__Info_sendEmail}>
+        <SendEmail contact={teacher.attributes} source="TeacherCard" />
+      </div> */}
       {teacher.attributes.Website ? (
         <a
           href={teacher.attributes.Website}

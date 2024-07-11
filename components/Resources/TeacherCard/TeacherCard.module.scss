@@ -45,6 +45,26 @@
       text-decoration: none;
     }
 
+    &__Email {
+      background-color: $color-primary-light;
+      padding: 0.25rem 2rem;
+      border-radius: 10rem;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        background-color: $color-primary;
+      }
+
+      svg {
+        height: 1.8rem;
+        width: 2rem;
+        fill: $color-grey-dark;
+        margin-right: 1rem;
+      }
+    }
+
     &__Link {
       // background-color: orangered;
       display: flex;
