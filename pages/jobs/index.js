@@ -15,7 +15,7 @@ export async function getStaticProps() {
     props: {
       globalData,
       jobsData: jobsData.jobsData,
-      placementData: jobsData.placementData,
+      // placementData: jobsData.placementData,
     },
     revalidate: 1,
   };
@@ -39,10 +39,10 @@ const Jobs = ({ globalData, jobsData, placementData }) => (
             <div>$35 per listing for up to six months.</div>
             <div>
               Contact{" "}
-              {`${placementData.firstName} ${placementData.lastName}, ${placementData.Position} `}{" "}
+              {`George Butterfield, Placement Coordinator `}{" "}
               <br /> {`by email at `}{" "}
-              <a href={`mailto:${placementData.email}`}>
-                {placementData.email}
+              <a href={`mailto:gborgan@aol.com`}>
+                gborgan@aol.com
               </a>
               .
             </div>
