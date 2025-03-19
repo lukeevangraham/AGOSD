@@ -14,7 +14,7 @@ export async function getStaticProps() {
 const Payment = ({ globalData }) => {
   const product = {
     description: "Application Fee",
-    price: 30,
+    price: 40,
   };
 
   return (
@@ -30,8 +30,8 @@ const Payment = ({ globalData }) => {
         <div className="row">
           <h1>Scholarship Application Fee Payment</h1>
           <p>
-            Thank you for your Scholarship Application. The $30 application
-            fee may be paid below.
+            Thank you for your Scholarship Application. The ${product.price}{" "}
+            application fee may be paid below.
           </p>
           <br />
           <p>
